@@ -1,131 +1,130 @@
 // JavaScript Document
 //==========================================
-//            ANIMATIONS JS LIB
+//         ZHAOSTEPHEN ANIMATIONS 
 //==========================================
 
-//GLOBAL VAR
-var bHomeMenuVis = false;
-var bMouseHoverMenuCircle = false;
-var bClickedMenuCircle = false;
-var defaultAnimOptions = {duration: 800, easing: 'easeOutExpo', queue: false};
+// GLOBAL VARIABLES
+var bHomeMenuVis = false,
+	bMouseHoverMenuCircle = false,
+	bClickedMenuCircle = false;
+
+// Animation Options Def
+var ANOPT_EASEOUT_800 = {duration: 800, easing: 'easeOutExpo', queue: false},
+	ANOPT_EASEOUT_1000 = {duration: 1000, easing: 'easeOutExpo', queue: false},
+	ANOPT_EASEOUT_1500 = {duration: 1500, easing: 'easeOutExpo', queue: false},
+	ANOPT_EASEIN_1500 = {duration: 1500, easing: 'easeInExpo', queue: false};
+
+var ANOPT_DEF = ANOPT_800;
 
 //ANIMATION FUNCTIONS DEF
-//--------------css animation---------------
-//function homeDirectionHalfPeek(direction){
-//	if (direction == 'top' || direction == 'bottom'){
-//		$('#bg-img').css(direction, '10%');
-//		$('#bg-img').css('height', '90%');
-//		$('#transitionPanel-'+direction).css('height', '10%');
-//	}
-//	else if (direction == 'left' || direction == 'right'){
-//		$('#bg-img').css(direction, '20%');
-//		$('#bg-img').css('width','80%');
-//		$('#transitionPanel-'+direction).css('width','20%');
-//	}
-//	$('#transitionPanel-'+direction).children('.transitionPanel-heading').fadeIn(200);
-//}
 function homeDirectionHalfPeek(direction){
-	var slowerAnimOptions = {duration: 1000, easing: 'easeOutExpo', queue: false};
-	if (direction == 'top'){
-		$('#bg-img').animate({'top': '10%'},defaultAnimOptions);
-		$('#bg-img').animate({'height': '90%'},defaultAnimOptions);
-		$('#transitionPanel-'+direction).animate({'height': '10%'},defaultAnimOptions);
-	}
-	else if (direction == 'bottom'){
-		$('#bg-img').animate({'bottom': '10%'},defaultAnimOptions);
-		$('#bg-img').animate({'height': '90%'},defaultAnimOptions);
-		$('#transitionPanel-'+direction).animate({'height': '10%'},defaultAnimOptions);
-	}
-	else if (direction == 'left'){
-		$('#bg-img').animate({'left': '20%'},slowerAnimOptions);
-		$('#bg-img').animate({'width': '80%'},slowerAnimOptions);
-		$('#transitionPanel-'+direction).animate({'width': '20%'},slowerAnimOptions);
-	}
-	else if (direction == 'right'){
-		$('#bg-img').animate({'right': '20%'},slowerAnimOptions);
-		$('#bg-img').animate({'width': '80%'},slowerAnimOptions);
-		$('#transitionPanel-'+direction).animate({'width': '20%'},slowerAnimOptions);
+	switch (direction) {
+		case 'top':
+			$('#bg-img').animate({'top': '10%'},ANOPT_DEF);
+			$('#bg-img').animate({'height': '90%'},ANOPT_DEF);
+			$('#transitionPanel-'+direction).animate({'height': '10%'},ANOPT_DEF);
+			break;
+			
+		case 'bottom':
+			$('#bg-img').animate({'bottom': '10%'},ANOPT_DEF);
+			$('#bg-img').animate({'height': '90%'},ANOPT_DEF);
+			$('#transitionPanel-'+direction).animate({'height': '10%'},ANOPT_DEF);
+			break;
+	
+		case 'left':
+			$('#bg-img').animate({'left': '20%'},ANOPT_EASEOUT_1000);
+			$('#bg-img').animate({'width': '80%'},ANOPT_EASEOUT_1000);
+			$('#transitionPanel-'+direction).animate({'width': '20%'},ANOPT_EASEOUT_1000);
+			break;
+			
+		case 'right':
+			$('#bg-img').animate({'right': '20%'},ANOPT_EASEOUT_1000);
+			$('#bg-img').animate({'width': '80%'},ANOPT_EASEOUT_1000);
+			$('#transitionPanel-'+direction).animate({'width': '20%'},ANOPT_EASEOUT_1000);
+			break;
+		
+		default:
+			console.error('Animation error: Unknown direction');
 	}
 	$('#transitionPanel-'+direction).children('.transitionPanel-heading').stop().fadeIn(300);
 }
-//--------------css animation---------------
-//function homeDirectionHalfShow(direction){
-//	$('#transitionPanel-'+direction).children('.transitionPanel-bg').fadeIn(200);
-//	$('#transitionPanel-'+direction).children('.transitionPanel-heading').stop().animate({'color': '#1B1B1B'},200);
-//	$('#bg-img').css(direction,'100%');
-//	if (direction == 'top' || direction == 'bottom'){
-//		$('#bg-img').css('height','0%');
-//		$('#transitionPanel-'+direction).css('height','100%');
-//	}
-//	else if (direction == 'left' || direction == 'right'){
-//		$('#bg-img').css('width','0%');
-//		$('#transitionPanel-'+direction).css('width','100%');
-//	}
-//}
+
 function homeDirectionHalfShow(direction){
-	var animOptions = {duration: 1500, easing: 'easeOutExpo', queue: false};
 	$('#transitionPanel-'+direction).children('.transitionPanel-bg').fadeIn(300);
 	$('#transitionPanel-'+direction).children('.transitionPanel-heading').stop().animate({
 		'color': '#1B1B1B',
 		'font-size': '6.4rem'},100);
 	var animProperties = {};
 	animProperties[direction] = '100%';
-	$('#bg-img').stop().animate(animProperties,animOptions);
-	if (direction == 'top' || direction == 'bottom'){
-		$('#bg-img').animate({'height': '0'}, animOptions);
-		$('#transitionPanel-'+direction).stop().animate({'height': '100%'}, animOptions);
-	}
-	else if (direction == 'left' || direction == 'right'){
-		$('#bg-img').animate({'width': '0'}, animOptions);
-		$('#transitionPanel-'+direction).stop().animate({'width': '100%'}, animOptions);
+	$('#bg-img').stop().animate(animProperties,ANOPT_EASEOUT_1500);
+	
+	switch (direction) {
+		case 'top':
+		case 'bottom':
+			$('#bg-img').animate({'height': '0'}, ANOPT_EASEOUT_1500);
+			$('#transitionPanel-'+direction).stop().animate({'height': '100%'}, ANOPT_EASEOUT_1500);
+			break;
+	
+		case 'left':
+		case 'right':
+			$('#bg-img').animate({'width': '0'}, ANOPT_EASEOUT_1500);
+			$('#transitionPanel-'+direction).stop().animate({'width': '100%'}, ANOPT_EASEOUT_1500);
+			break;
+		
+		default:
+			console.error('Animation error: Unknown direction');
 	}
 }
 
 function homeDirectionHalfCont(direction){
-	var animOptions = {duration: 1500, easing: 'easeInExpo', queue: false};
 	$('#transitionPanel-'+direction).children('.transitionPanel-bg').fadeIn(300);
 	$('#transitionPanel-'+direction).children('.transitionPanel-heading').stop().animate({
 		'color': '#1B1B1B',
 		'font-size': '6.4rem'},100);
 	var animProperties = {};
 	animProperties[direction] = '100%';
-	$('#bg-img').stop().animate(animProperties,animOptions);
-	if (direction == 'top' || direction == 'bottom'){
-		$('#bg-img').animate({'height': '0'}, animOptions);
-		$('#transitionPanel-'+direction).stop().animate({'height': '100%'}, animOptions);
-	}
-	else if (direction == 'left' || direction == 'right'){
-		$('#bg-img').animate({'width': '0'}, animOptions);
-		$('#transitionPanel-'+direction).stop().animate({'width': '100%'}, animOptions);
+	$('#bg-img').stop().animate(animProperties,ANOPT_EASEIN_1500);
+
+	switch (direction) {
+		case 'top':
+		case 'bottom':
+			$('#bg-img').animate({'height': '0'}, ANOPT_EASEIN_1500);
+			$('#transitionPanel-'+direction).stop().animate({'height': '100%'}, ANOPT_EASEIN_1500);
+			break;
+			
+		case 'left':
+		case 'right':
+			$('#bg-img').animate({'width': '0'}, ANOPT_EASEIN_1500);
+			$('#transitionPanel-'+direction).stop().animate({'width': '100%'}, ANOPT_EASEIN_1500);
+			break;
+			
+		default:
+			console.error('Animation error: Unknown direction');
 	}
 }
-//--------------css animation---------------
-//function homeDirectionHalfRevert(direction){
-//	$('#transitionPanel-'+direction).children().fadeOut(200);
-//	$('#bg-img').css(direction,'0');
-//	if (direction == 'top' || direction == 'bottom'){
-//		$('#bg-img').css('height','100%');
-//		$('#transitionPanel-'+direction).css('height','0');
-//	}
-//	else if (direction == 'left' || direction == 'right'){
-//		$('#bg-img').css('width','100%');
-//		$('#transitionPanel-'+direction).css('width','0');
-//	}
-//}
+
 function homeDirectionHalfRevert(direction){
-	var slowerAnimOptions = {duration: 1000, easing: 'easeOutExpo', queue: false};
 	$('#transitionPanel-'+direction).children().stop().fadeOut(500);
 	var animProperties = {};
 	animProperties[direction] = '0';
-	if (direction == 'top' || direction == 'bottom'){
-		$('#bg-img').stop().animate(animProperties,defaultAnimOptions);
-		$('#bg-img').animate({'height': '100%'}, defaultAnimOptions);
-		$('#transitionPanel-'+direction).stop().animate({'height': '0'}, defaultAnimOptions);
-	}
-	else if (direction == 'left' || direction == 'right'){
-		$('#bg-img').stop().animate(animProperties,slowerAnimOptions);
-		$('#bg-img').animate({'width': '100%'}, slowerAnimOptions);
-		$('#transitionPanel-'+direction).stop().animate({'width': '0'}, slowerAnimOptions);
+	
+	switch (direction) {
+		case 'top':
+		case 'bottom':
+			$('#bg-img').stop().animate(animProperties,ANOPT_DEF);
+			$('#bg-img').animate({'height': '100%'}, ANOPT_DEF);
+			$('#transitionPanel-'+direction).stop().animate({'height': '0'}, ANOPT_DEF);
+			break;
+		
+		case 'left':
+		case 'right':
+			$('#bg-img').stop().animate(animProperties,ANOPT_EASEOUT_1000);
+			$('#bg-img').animate({'width': '100%'}, ANOPT_EASEOUT_1000);
+			$('#transitionPanel-'+direction).stop().animate({'width': '0'}, ANOPT_EASEOUT_1000);
+			break;
+		
+		default:
+			console.error('Animation err: Unknown direction');
 	}
 }
 function homeMenuPeek(){
@@ -251,29 +250,36 @@ $(function() {
 		bClickedMenuCircle = true;
         var href = $(this).attr('href');
 		e.preventDefault();
-		if ($(this).parent().attr('id') == 'home-circle-1'){
-			homeDirectionHalfShow('top');
-//			$("#transitionPanel-top").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-//				setTimeout(function() {window.open(href,"_self");},1000);
-//			});
-		}
-		else if ($(this).parent().attr('id') == 'home-circle-2'){
-			homeDirectionHalfShow('left');
-//			$("#transitionPanel-left").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-//				setTimeout(function() {window.open(href,"_self");},1000);
-//			});
-		}
-		else if ($(this).parent().attr('id') == 'home-circle-3'){
-			homeDirectionHalfShow('right');
-//			$("#transitionPanel-right").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-//				setTimeout(function() {window.open(href,"_self");},1000);
-//			});
-		}
-		else if ($(this).parent().attr('id') == 'home-circle-4'){
-			homeDirectionHalfShow('bottom');
-//			$("#transitionPanel-bottom").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-//				setTimeout(function() {window.open(href,"_self");},1000);
-//			});
+		
+		switch ($(this).parent().attr('id')) {
+			case 'home-circle-1':
+				homeDirectionHalfShow('top');
+	//			$("#transitionPanel-top").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+	//				setTimeout(function() {window.open(href,"_self");},1000);
+	//			});
+				break;
+				
+			case 'home-circle-2':
+				homeDirectionHalfShow('left');
+	//			$("#transitionPanel-left").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+	//				setTimeout(function() {window.open(href,"_self");},1000);
+	//			});
+				break;
+				
+			case 'home-circle-3':
+				homeDirectionHalfShow('right');
+	//			$("#transitionPanel-right").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+	//				setTimeout(function() {window.open(href,"_self");},1000);
+	//			});
+				break;
+				
+			case 'home-circle-4':
+				homeDirectionHalfShow('bottom');
+	//			$("#transitionPanel-bottom").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+				break;
+			
+			default:
+				console.error('Animation error: Unknown element');
 		}
 		setTimeout(function() {window.open(href,"_self");},1500);
     });
