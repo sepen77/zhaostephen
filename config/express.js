@@ -4,7 +4,7 @@ var config = require('./config'),
 module.exports = function() {
 	var app = express();
 	
-	app.use(express.static(__dirname + '/public'));
+	app.use(express.static('./public'));
 	
 	app.get('/', function(req, res) {
 		res.sendFile('index.html');
