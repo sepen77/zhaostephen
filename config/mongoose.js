@@ -1,6 +1,7 @@
-var mongoose = require('mongoose');
+var config = require('./config'),
+	mongoose = require('mongoose');
 
 module.exports = function() {
-	var db = mongoose.connect('mongodb://localhost/zhaostephen');
+	var db = mongoose.connect(config.db);
 	return db;
 };
