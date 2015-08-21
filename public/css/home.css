@@ -1,0 +1,187 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+=========================================
+Mouseable Regions
+=========================================
+*/
+#home-topMouseable{
+	position:absolute;
+	top:1px;
+	height:5%;
+	width:100%;
+	z-index:160;
+}
+
+#home-bottomMouseable{
+	position:absolute;
+	bottom:1px;
+	height:5%;
+	width:100%;
+	z-index:160;
+}
+
+#home-leftMouseable{
+	position:absolute;
+	left:1px;
+	height:100%;
+	width:5%;
+	z-index:160;
+}
+
+#home-rightMouseable{
+	position:absolute;
+	right:1px;
+	height:100%;
+	width:5%;
+	z-index:160;
+}
+
+
+/*
+=========================================
+Directional Half Panels
+=========================================
+ ***originally half, but now full panels. Names were not changed for convenience
+*/
+
+
+
+
+
+/*
+=========================================
+Banner Name
+=========================================
+*/
+div.home-bannerNameContainer{
+	display:block;
+	position: absolute;
+	top:50%;
+	width:56rem;
+	left:50%;
+	height: 30rem;
+	z-index: 130;
+	
+	border:#1B1B1B solid 2px;
+	
+	text-align: center;
+	
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	-webkit-transition-property: height, width, -webkit-border-radius, border-radius;
+	transition-property: height, width, -webkit-border-radius, border-radius;
+	-webkit-transition-timing-function:ease-out;
+	transition-timing-function:ease-out;
+}
+
+#home-bannerName{
+	z-index: 131;
+	-webkit-transform: translateY(-58.5%);
+	-ms-transform: translateY(-58.5%);
+	transform: translateY(-58.5%);
+}
+
+#home-firstName{
+	position: relative;
+	z-index: 133;
+	
+	font-size: 7.2rem;
+	font-family: 'Martel Sans', Arial, sans-serif;
+	font-weight: 300; 
+	text-align: center;
+	color: #1B1B1B;
+	text-transform: uppercase;
+}
+
+#home-lastName{
+	position: relative;
+	z-index: 132;
+	
+	font-size: 11rem;
+	font-family: 'Martel Sans', Arial, sans-serif;
+	font-weight: 800; 
+	text-align: center;
+	line-height:2rem;
+	color: #1B1B1B;
+	text-transform: uppercase;
+}
+
+
+/*
+=========================================
+Menu Circles
+=========================================
+*/
+div.home-menucircle{
+	z-index: 1005;
+}
+
+a.home-menucircle{
+	position: relative;
+	display: block;
+	width:16px;
+	height:16px;
+	
+	cursor:pointer;
+	
+	background-color:#1B1B1B;
+	
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a.home-menucircle:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	
+	border: #1B1B1B solid 2px;
+	
+	-webkit-border-radius:16px;
+	border-radius:16px;
+	
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	-webkit-transition-property: top, right, bottom, left, border-width;
+	transition-property: top, right, bottom, left, border-width;
+}
+
+a.home-menucircle:hover:before, a.home-menucircle:focus:before, a.home-menucircle:active:before{
+	top: -8px;
+	right: -8px;
+	bottom: -8px;
+	left: -8px;
+  
+  	border-width: 2px;
+}
+
+#home-circle-1{
+	position: absolute;
+	top: calc(15% - 8px);
+	left: calc(50% - 8px);
+}
+#home-circle-2{
+	position: absolute;
+	top: calc(50% - 8px);
+	left: calc(15% - 8px);
+}
+#home-circle-3{
+	position: absolute;
+	top: calc(50% - 8px);
+	left: calc(85% - 8px);
+}
+#home-circle-4{
+	position: absolute;
+	top: calc(85% - 8px);
+	left: calc(50% - 8px);
+}
