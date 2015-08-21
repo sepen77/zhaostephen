@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/sepen77/zhaostephen/issues"
   },
-  "homepage": "https://github.com/sepen77/zhaostephen#readme"
+  "homepage": "https://github.com/sepen77/zhaostephen#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "mongoose": "^4.1.3"
+  }
 }
