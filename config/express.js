@@ -4,9 +4,12 @@ var config = require('./config'),
 module.exports = function() {
 	var app = express();
 	
-	app.get('/', res.render('index'));
-	
 	app.use(express.static('./public'));
+	
+	app.get('/', function(req, res) {
+		res.render('index.html');
+	});
+	
 	
 	return app;
 };
