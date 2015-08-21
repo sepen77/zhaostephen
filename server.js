@@ -1,10 +1,10 @@
 // require config files
 var config = require('./config/config'),
-	mongoose = require('./config/mongoose'),
+	//-----mongoose = require('./config/mongoose'),
 	express = require('./config/express');
 
 // init app and database
-var db = mongoose(),
+var //-----db = mongoose(),
 	app = express();
 	
 // start listening
