@@ -139,7 +139,7 @@ var homeTransitionPanelRevert = function(direction){
 }
 
 var homeMenuPeek = function(callback){
-	//$('.home-menucircle').stop();
+	$('.home-menucircle').stop();
 
 	if (bHomeMenuVis == false){
 		$('.home-menucircle').fadeIn(ANOPT_DEF);
