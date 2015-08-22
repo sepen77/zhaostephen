@@ -142,7 +142,7 @@ var homeMenuPeek = function(callback){
 	//$('.home-menucircle').stop();
 
 	if (bHomeMenuVis == false){
-		$('.home-menucircle').fadeIn(300);
+		$('.home-menucircle').fadeIn(ANOPT_DEF);
 	}
 	$('div.home-bannerNameContainer').animate({
 		'height':'70rem',
@@ -166,7 +166,7 @@ var homeMenuRevert = function(callback){
 	//$('.home-menucircle').stop();
 	
 	if (bHomeMenuVis){
-		$('.home-menucircle').fadeOut(300);
+		$('.home-menucircle').fadeOut(ANOPT_DEF);
 	}
 	
 	callback();
