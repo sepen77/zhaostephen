@@ -150,7 +150,7 @@ var homeMenuPeek = function(){
 		}, ANOPT_DEF);
 	
 	if($('.home-menucircle').is(':animated')) {
-		$('.home-menucircle').stop().animate({'opacity':'100%'}, ANOPT_DEF);
+		$('.home-menucircle').stop().animate({'opacity':'100%', 'display':''}, ANOPT_DEF);
     }
 	else {
 		$('.home-menucircle').fadeIn(ANOPT_DEF);
