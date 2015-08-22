@@ -149,8 +149,8 @@ var homeMenuPeek = function(){
 		'border-radius':'35rem'
 		}, ANOPT_DEF);
 	
-	if($('.home-menucircle').is(':animated')) {
-		$('.home-menucircle').animate({'opacity':'100%', 'display':''}, ANOPT_DEF);
+	if(bHomeMenuCircleIsFadingOut) {
+		$('.home-menucircle').stop().animate({'opacity':'100%'}, ANOPT_DEF);
     }
 	else {
 		$('.home-menucircle').fadeIn(ANOPT_DEF);
@@ -164,8 +164,11 @@ var homeMenuRevert = function(){
 		'-webkit-border-radius':'0rem',
 		'border-radius':'0rem'
 		}, ANOPT_DEF);
-
-	$('.home-menucircle').fadeOut(ANOPT_DEF);
+	
+	bHomeMenuCircleIsFadingOut = true;
+	$('.home-menucircle').fadeOut(withAddedComplete(ANOPT_DEF, function(){
+		bHomeMenuCircleIsFadingOut = false;
+	}));
 }
 
 // DOCUMENT READY FUNCTION
