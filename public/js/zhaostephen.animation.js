@@ -56,7 +56,7 @@ var homeDirectionHalfShow = function(direction){
 		'font-size': '6.4rem'},100);
 	// var animProperties = {};
 	// animProperties[direction] = '100%';
-	$('#bg-img').stop().animate(JQuery.phraseJSON('{"'+direction+'" : "100%"}'),ANOPT_EASEOUT_1500);
+	$('#bg-img').stop().animate(JSON.parse('{"'+direction+'" : "100%"}'),ANOPT_EASEOUT_1500);
 	
 	switch (direction) {
 		case 'top':
