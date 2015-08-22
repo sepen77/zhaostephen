@@ -41,17 +41,6 @@ Mouseable Regions
 
 /*
 =========================================
-Directional Half Panels
-=========================================
- ***originally half, but now full panels. Names were not changed for convenience
-*/
-
-
-
-
-
-/*
-=========================================
 Banner Name
 =========================================
 */
@@ -68,12 +57,12 @@ div.home-bannerNameContainer{
 	
 	text-align: center;
 	
-	-webkit-transition-duration: 0.5s;
+/* 	-webkit-transition-duration: 0.5s;
 	transition-duration: 0.5s;
 	-webkit-transition-property: height, width, -webkit-border-radius, border-radius;
 	transition-property: height, width, -webkit-border-radius, border-radius;
 	-webkit-transition-timing-function:ease-out;
-	transition-timing-function:ease-out;
+	transition-timing-function:ease-out; */
 }
 
 #home-bannerName{
@@ -150,10 +139,10 @@ a.home-menucircle:before{
 	-webkit-border-radius:16px;
 	border-radius:16px;
 	
-	-webkit-transition-duration: 0.5s;
+/* 	-webkit-transition-duration: 0.5s;
 	transition-duration: 0.5s;
 	-webkit-transition-property: top, right, bottom, left, border-width;
-	transition-property: top, right, bottom, left, border-width;
+	transition-property: top, right, bottom, left, border-width; */
 }
 
 a.home-menucircle:hover:before, a.home-menucircle:focus:before, a.home-menucircle:active:before{
