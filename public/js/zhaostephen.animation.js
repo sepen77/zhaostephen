@@ -148,12 +148,13 @@ var homeMenuPeek = function(){
 		'-webkit-border-radius':'35rem',
 		'border-radius':'35rem'
 		}, ANOPT_DEF);
-		
-	bHomeMenuCircleIsFadingIn = true;
-	$('.home-menucircle').fadeIn(withAddedComplete(ANOPT_DEF, function(){
-		$('.home-menucircle').show(); // to show after complete in case something else made the element hide (i.e. homeMenuRevert)
-		bHomeMenuCircleIsFadingIn = false;
-	}));
+	
+	if($('.home-menucircle').is(':animated')) {
+		$('.home-menucircle').stop().animate({'opacity':'100%'}, ANOPT_DEF);
+    }
+	else {
+		$('.home-menucircle').fadeIn(ANOPT_DEF);
+	}
 }
 var homeMenuRevert = function(){
 	$('div.home-bannerNameContainer').animate({
@@ -163,11 +164,8 @@ var homeMenuRevert = function(){
 		'-webkit-border-radius':'0rem',
 		'border-radius':'0rem'
 		}, ANOPT_DEF);
-	
-	bHomeMenuCircleIsFadingOut = true;
-	$('.home-menucircle').fadeOut(withAddedComplete(ANOPT_DEF, function(){
-		bHomeMenuCircleIsFadingOut = false;
-	}));
+
+	$('.home-menucircle').fadeOut(ANOPT_DEF);
 }
 
 // DOCUMENT READY FUNCTION
