@@ -139,7 +139,7 @@ var homeTransitionPanelRevert = function(direction){
 }
 
 var homeMenuPeek = function(callback){
-	$('.home-menucircle').stop();
+	//$('.home-menucircle').stop();
 
 	if (bHomeMenuVis == false){
 		$('.home-menucircle').fadeIn(300);
@@ -147,9 +147,7 @@ var homeMenuPeek = function(callback){
 	$('div.home-bannerNameContainer').animate({
 		'height':'70rem',
 		'width':'70rem',
-		'background-color':'rgba(0,0,0,0.1)'
-		},ANOPT_DEF);
-	$('.home-bannerNameContainer').animate({
+		'background-color':'rgba(0,0,0,0.1)',
 		'-webkit-border-radius':'35rem',
 		'border-radius':'35rem'
 		}, ANOPT_DEF);
@@ -160,14 +158,12 @@ var homeMenuRevert = function(callback){
 	$('div.home-bannerNameContainer').animate({
 		'height':'30rem',
 		'width':'56rem',
-		'background-color':'rgba(0,0,0,0)'
-		}, ANOPT_DEF);
-	$('.home-bannerNameContainer').animate({
+		'background-color':'rgba(0,0,0,0)',
 		'-webkit-border-radius':'0rem',
 		'border-radius':'0rem'
 		}, ANOPT_DEF);
 	
-	$('.home-menucircle').stop();
+	//$('.home-menucircle').stop();
 	
 	if (bHomeMenuVis){
 		$('.home-menucircle').fadeOut(300);
