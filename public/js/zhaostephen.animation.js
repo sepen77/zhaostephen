@@ -14,7 +14,7 @@ var ANOPT_EASEOUT_800 = {duration: 800, easing: 'easeOutExpo', queue: false},
 	ANOPT_EASEOUT_1500 = {duration: 1500, easing: 'easeOutExpo', queue: false},
 	ANOPT_EASEIN_1500 = {duration: 1500, easing: 'easeInExpo', queue: false};
 
-var ANOPT_DEF = ANOPT_800;
+var ANOPT_DEF = ANOPT_EASEOUT_800;
 
 //ANIMATION FUNCTIONS DEF
 function homeDirectionHalfPeek(direction){
