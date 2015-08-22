@@ -1,4 +1,6 @@
 // JavaScript Document
+
+// does resize on page elements depending on window size
 function doResize() {
 	// EDIT FONT SIZE
 	var wndWidth = $('html').width();
@@ -11,7 +13,15 @@ function doResize() {
 	$('html').css('font-size',fpc+'%');
 }
 
+// util function to add a 'complete' function for pre-specified animations
+var withAddedCallback = function(json, callback){
+	json.complete = callback;
+	return json;
+}
+
+// ON DOCUMENT READY
 $(function(){
+	// have window listen for resize event
 	$(window).bind('resize',function() {
 		doResize();
 	}).trigger('resize');

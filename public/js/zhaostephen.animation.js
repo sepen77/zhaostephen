@@ -17,7 +17,7 @@ var ANOPT_EASEOUT_800 = {duration: 800, easing: 'easeOutExpo', queue: false},
 var ANOPT_DEF = ANOPT_EASEOUT_800;
 
 //ANIMATION FUNCTIONS DEF
-function homeDirectionHalfPeek(direction){
+var homeDirectionHalfPeek = function(direction){
 	switch (direction) {
 		case 'top':
 			$('#bg-img').animate({'top': '10%'},ANOPT_DEF);
@@ -49,14 +49,14 @@ function homeDirectionHalfPeek(direction){
 	$('#transitionPanel-'+direction).children('.transitionPanel-heading').stop().fadeIn(300);
 }
 
-function homeDirectionHalfShow(direction){
+var homeDirectionHalfShow = function(direction){
 	$('#transitionPanel-'+direction).children('.transitionPanel-bg').fadeIn(300);
 	$('#transitionPanel-'+direction).children('.transitionPanel-heading').stop().animate({
 		'color': '#1B1B1B',
 		'font-size': '6.4rem'},100);
-	var animProperties = {};
-	animProperties[direction] = '100%';
-	$('#bg-img').stop().animate(animProperties,ANOPT_EASEOUT_1500);
+	// var animProperties = {};
+	// animProperties[direction] = '100%';
+	$('#bg-img').stop().animate($.phraseJSON('{'+direction+': "100%"}'),ANOPT_EASEOUT_1500);
 	
 	switch (direction) {
 		case 'top':
@@ -76,7 +76,7 @@ function homeDirectionHalfShow(direction){
 	}
 }
 
-function homeDirectionHalfCont(direction){
+var homeDirectionHalfCont = function(direction){
 	$('#transitionPanel-'+direction).children('.transitionPanel-bg').fadeIn(300);
 	$('#transitionPanel-'+direction).children('.transitionPanel-heading').stop().animate({
 		'color': '#1B1B1B',
@@ -103,7 +103,7 @@ function homeDirectionHalfCont(direction){
 	}
 }
 
-function homeDirectionHalfRevert(direction){
+var homeDirectionHalfRevert = function(direction){
 	$('#transitionPanel-'+direction).children().stop().fadeOut(500);
 	var animProperties = {};
 	animProperties[direction] = '0';
@@ -127,7 +127,8 @@ function homeDirectionHalfRevert(direction){
 			console.error('Animation err: Unknown direction');
 	}
 }
-function homeMenuPeek(){
+
+var homeMenuPeek = function(){
 	if (bHomeMenuVis == false){
 		$('.home-menucircle').fadeIn(300);
 	}
@@ -137,7 +138,7 @@ function homeMenuPeek(){
 	$('.home-bannerNameContainer').css('-webkit-border-radius','35rem');
 	$('.home-bannerNameContainer').css('border-radius','35rem');
 }
-function homeMenuRevert(){
+var homeMenuRevert = function(){
 	$('div.home-bannerNameContainer').css('height','30rem');
 	$('div.home-bannerNameContainer').css('width','56rem');
 	$('div.home-bannerNameContainer').css('background-color','rgba(0,0,0,0)');
