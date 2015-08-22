@@ -14,8 +14,8 @@ function doResize() {
 }
 
 // util function to add a 'complete' function for pre-specified animations
-var withAddedCallback = function(json, callback){
-	json.complete = callback;
+var withAddedComplete = function(json, fnc){
+	json.complete = fnc;
 	return json;
 }
 

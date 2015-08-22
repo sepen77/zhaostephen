@@ -5,6 +5,8 @@
 
 // GLOBAL VARIABLES
 var bHomeMenuVis = false,
+	bHomeMenuCircleIsFadingIn = false,
+	bHomeMenuCircleIsFadingOut = false,
 	bMouseHoverMenuCircle = false,
 	bClickedMenuCircle = false;
 
@@ -138,12 +140,7 @@ var homeTransitionPanelRevert = function(direction){
 	}
 }
 
-var homeMenuPeek = function(callback){
-	$('.home-menucircle').stop();
-
-	if (bHomeMenuVis == false){
-		$('.home-menucircle').fadeIn(ANOPT_DEF);
-	}
+var homeMenuPeek = function(){	
 	$('div.home-bannerNameContainer').animate({
 		'height':'70rem',
 		'width':'70rem',
@@ -151,10 +148,14 @@ var homeMenuPeek = function(callback){
 		'-webkit-border-radius':'35rem',
 		'border-radius':'35rem'
 		}, ANOPT_DEF);
-	
-	callback();
+		
+	bHomeMenuCircleIsFadingIn = true;
+	$('.home-menucircle').fadeIn(withAddedComplete(ANOPT_DEF, function(){
+		$('.home-menucircle').show(); // to show after complete in case something else made the element hide (i.e. homeMenuRevert)
+		bHomeMenuCircleIsFadingIn = false;
+	}));
 }
-var homeMenuRevert = function(callback){
+var homeMenuRevert = function(){
 	$('div.home-bannerNameContainer').animate({
 		'height':'30rem',
 		'width':'56rem',
@@ -163,13 +164,10 @@ var homeMenuRevert = function(callback){
 		'border-radius':'0rem'
 		}, ANOPT_DEF);
 	
-	//$('.home-menucircle').stop();
-	
-	if (bHomeMenuVis){
-		$('.home-menucircle').fadeOut(ANOPT_DEF);
-	}
-	
-	callback();
+	bHomeMenuCircleIsFadingOut = true;
+	$('.home-menucircle').fadeOut(withAddedComplete(ANOPT_DEF, function(){
+		bHomeMenuCircleIsFadingOut = false;
+	}));
 }
 
 // DOCUMENT READY FUNCTION
@@ -182,14 +180,10 @@ $(function() {
 	
 	// home-bannerNameContainer mouseenter and mouseleave events
 	$('div.home-bannerNameContainer').contents().add('div.home-bannerNameContainer').mouseenter(function() {
-        homeMenuPeek(function(){
-			bHomeMenuVis = true;
-		});
+        homeMenuPeek();
 	});
 	$('div.home-bannerNameContainer').mouseleave(function() {
-		homeMenuRevert(function(){
-			bHomeMenuVis = false;
-		});
+		homeMenuRevert();
     });
 		
 	// home-menucircle hover events
