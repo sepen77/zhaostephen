@@ -16,21 +16,21 @@ function doResize() {
 
 // UTIL FUNCTIONS
 // adds a 'complete' function for pre-specified animations
-var withAddedComplete = function(json, fnc){
-	json.complete = fnc;
-	return json;
+var withAddedComplete = function(anopt, complete){
+	anopt.complete = complete;
+	return anopt;
 }
 
 // adds a 'done' function for pre-specified animations
-var withAddedDone = function(json, fnc){
-	json.done = fnc;
-	return json;
+var withAddedDone = function(anopt, done){
+	anopt.done = done;
+	return anopt;
 }
 
 // adds a 'fail' function for pre-specified animations
-var withAddedFail = function(json, fnc){
-	json.fail = fnc;
-	return json;
+var withAddedFail = function(anopt, fail){
+	anopt.fail = fail;
+	return anopt;
 }
 
 // ON DOCUMENT READY

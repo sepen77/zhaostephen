@@ -58,7 +58,6 @@ var homeTransitionPanelPeek = function(direction){
 var homeTransitionPanelShow = function(direction){
 	// stop
 	$('#transitionPanel-'+direction).stop();
-	$('#transitionPanel-'+direction).children('.transitionPanel-heading').show();
 	$('#transitionPanel-'+direction).children('.transitionPanel-bg').fadeIn(ANOPT_EASEOUT_300);
 	$('#transitionPanel-'+direction).children('.transitionPanel-heading').animate({
 		'color': '#1B1B1B',
