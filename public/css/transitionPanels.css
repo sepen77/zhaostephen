@@ -14,7 +14,6 @@
 .transitionPanel.vertical{
 	height:0%;
 	width:100%;
-
 }
 
 .transitionPanel.horizontal{
@@ -24,7 +23,6 @@
 }
 
 .transitionPanel-heading{
-	display:inline-block;
 	font-size: 3.6rem;
 	font-family: 'Martel Sans', Arial, sans-serif;
 	text-align: center;
