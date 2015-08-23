@@ -13,9 +13,23 @@ function doResize() {
 	$('html').css('font-size',fpc+'%');
 }
 
-// util function to add a 'complete' function for pre-specified animations
+
+// UTIL FUNCTIONS
+// adds a 'complete' function for pre-specified animations
 var withAddedComplete = function(json, fnc){
 	json.complete = fnc;
+	return json;
+}
+
+// adds a 'done' function for pre-specified animations
+var withAddedDone = function(json, fnc){
+	json.done = fnc;
+	return json;
+}
+
+// adds a 'fail' function for pre-specified animations
+var withAddedFail = function(json, fnc){
+	json.fail = fnc;
 	return json;
 }
 

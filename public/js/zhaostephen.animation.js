@@ -4,14 +4,12 @@
 //==========================================
 
 // GLOBAL VARIABLES
-var bHomeMenuVis = false,
-	bHomeMenuCircleIsFadingIn = false,
-	bHomeMenuCircleIsFadingOut = false,
-	bMouseHoverMenuCircle = false,
+var bMouseHoverMenuCircle = false,
 	bClickedMenuCircle = false;
 
 // Animation Options Def
-var ANOPT_EASEOUT_800 = {duration: 800, easing: 'easeOutExpo', queue: false},
+var ANOPT_EASEOUT_300 = {duration: 300, easing: 'easeOutExpo', queue: false},
+	ANOPT_EASEOUT_800 = {duration: 800, easing: 'easeOutExpo', queue: false},
 	ANOPT_EASEOUT_1000 = {duration: 1000, easing: 'easeOutExpo', queue: false},
 	ANOPT_EASEOUT_1500 = {duration: 1500, easing: 'easeOutExpo', queue: false},
 	ANOPT_EASEIN_1500 = {duration: 1500, easing: 'easeInExpo', queue: false};
@@ -21,7 +19,6 @@ var ANOPT_DEF = ANOPT_EASEOUT_800;
 //ANIMATION FUNCTIONS DEF
 var homeTransitionPanelPeek = function(direction){
 	// stop
-	$('#bg-img').stop();
 	$('#transitionPanel-'+direction).stop();
 	
 	switch (direction) {
@@ -52,45 +49,18 @@ var homeTransitionPanelPeek = function(direction){
 		default:
 			console.error('Animation error: Unknown direction');
 	}
-	$('#transitionPanel-'+direction).children('.transitionPanel-heading').stop().fadeIn(300);
+	
+	$('#transitionPanel-'+direction).children('.transitionPanel-heading').stop().fadeIn(withAddedComplete(ANOPT_EASEOUT_300, function(){
+		$('#transitionPanel-'+direction).children('.transitionPanel-heading').css({'opacity':'100%'});
+	}));
 }
 
 var homeTransitionPanelShow = function(direction){
 	// stop
-	$('#bg-img').stop();
 	$('#transitionPanel-'+direction).stop();
-
-	$('#transitionPanel-'+direction).children('.transitionPanel-bg').stop().fadeIn(300);
-	$('#transitionPanel-'+direction).children('.transitionPanel-heading').stop().animate({
-		'color': '#1B1B1B',
-		'font-size': '6.4rem'},100);
-	$('#bg-img').animate(JSON.parse('{"'+direction+'" : "100%"}'),ANOPT_EASEOUT_1500);
-	
-	switch (direction) {
-		case 'top':
-		case 'bottom':
-			$('#bg-img').animate({'height': '0'}, ANOPT_EASEOUT_1500);
-			$('#transitionPanel-'+direction).animate({'height': '100%'}, ANOPT_EASEOUT_1500);
-			break;
-	
-		case 'left':
-		case 'right':
-			$('#bg-img').animate({'width': '0'}, ANOPT_EASEOUT_1500);
-			$('#transitionPanel-'+direction).animate({'width': '100%'}, ANOPT_EASEOUT_1500);
-			break;
-		
-		default:
-			console.error('Animation error: Unknown direction');
-	}
-}
-
-var homeTransitionPanelCont = function(direction){
-	// stop
-	$('#bg-img').stop();
-	$('#transitionPanel-'+direction).stop();
-
-	$('#transitionPanel-'+direction).children('.transitionPanel-bg').stop().fadeIn(300);
-	$('#transitionPanel-'+direction).children('.transitionPanel-heading').stop().animate({
+	$('#transitionPanel-'+direction).children('.transitionPanel-heading').show();
+	$('#transitionPanel-'+direction).children('.transitionPanel-bg').fadeIn(ANOPT_EASEOUT_300);
+	$('#transitionPanel-'+direction).children('.transitionPanel-heading').animate({
 		'color': '#1B1B1B',
 		'font-size': '6.4rem'},100);
 	$('#bg-img').animate(JSON.parse('{"'+direction+'" : "100%"}'),ANOPT_EASEOUT_1500);
@@ -115,7 +85,6 @@ var homeTransitionPanelCont = function(direction){
 
 var homeTransitionPanelRevert = function(direction){
 	// stop
-	$('#bg-img').stop();
 	$('#transitionPanel-'+direction).stop();
 	
 	$('#transitionPanel-'+direction).children().stop().fadeOut(500);
@@ -148,13 +117,10 @@ var homeMenuPeek = function(){
 		'-webkit-border-radius':'35rem',
 		'border-radius':'35rem'
 		}, ANOPT_DEF);
-	
-	if(bHomeMenuCircleIsFadingOut) {
-		$('.home-menucircle').stop().animate({'opacity':'100%'}, ANOPT_DEF);
-    }
-	else {
-		$('.home-menucircle').fadeIn(ANOPT_DEF);
-	}
+
+	$('.home-menucircle').stop().fadeIn(withAddedComplete(ANOPT_DEF, function(){
+		$('.home-menucircle').css({'opacity':'100%'});
+	}));	
 }
 var homeMenuRevert = function(){
 	$('div.home-bannerNameContainer').animate({
@@ -165,10 +131,7 @@ var homeMenuRevert = function(){
 		'border-radius':'0rem'
 		}, ANOPT_DEF);
 	
-	bHomeMenuCircleIsFadingOut = true;
-	$('.home-menucircle').fadeOut(withAddedComplete(ANOPT_DEF, function(){
-		bHomeMenuCircleIsFadingOut = false;
-	}));
+	$('.home-menucircle').stop().fadeOut(ANOPT_DEF);
 }
 
 // DOCUMENT READY FUNCTION
@@ -180,10 +143,10 @@ $(function() {
 	// ON HOVER TRIGGERED EVENTS
 	
 	// home-bannerNameContainer mouseenter and mouseleave events
-	$('div.home-bannerNameContainer').contents().add('div.home-bannerNameContainer').mouseenter(function() {
+	$('div.home-bannerNameContainer').hover(function() {
         homeMenuPeek();
-	});
-	$('div.home-bannerNameContainer').mouseleave(function() {
+	},
+	function() {
 		homeMenuRevert();
     });
 		
@@ -191,7 +154,8 @@ $(function() {
 	$('#home-circle-1').hover(function() {
 		homeTransitionPanelPeek('top');
 		bMouseHoverMenuCircle = true;
-	}, function() {
+	},
+	function() {
 		if (!bClickedMenuCircle) {
 			homeTransitionPanelRevert('top');
 		}
@@ -200,7 +164,8 @@ $(function() {
 	$('#home-circle-2').hover(function() {
 		homeTransitionPanelPeek('left');
 		bMouseHoverMenuCircle = true;
-	}, function() {
+	},
+	function() {
 		if (!bClickedMenuCircle) {
 			homeTransitionPanelRevert('left');
 		}
@@ -209,7 +174,8 @@ $(function() {
 	$('#home-circle-3').hover(function() {
 		homeTransitionPanelPeek('right');
 		bMouseHoverMenuCircle = true;
-	}, function() {
+	},
+	function() {
 		if (!bClickedMenuCircle) {
 			homeTransitionPanelRevert('right');
 		}
@@ -218,7 +184,8 @@ $(function() {
 	$('#home-circle-4').hover(function() {
 		homeTransitionPanelPeek('bottom');
 		bMouseHoverMenuCircle = true;
-	}, function() {
+	},
+	function() {
 		if (!bClickedMenuCircle) {
 			homeTransitionPanelRevert('bottom');
 		}
@@ -270,7 +237,7 @@ $(function() {
 //	});
 	
 	// home-menucircle onclick event
-	$('a.home-menucircle').on('click', function(e) {
+	$('a.home-menucircle').click(function(e) {
 		bClickedMenuCircle = true;
         var href = $(this).attr('href');
 		e.preventDefault();

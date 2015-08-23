@@ -56,13 +56,6 @@ div.home-bannerNameContainer{
 	border:#1B1B1B solid 2px;
 	
 	text-align: center;
-	
-/* 	-webkit-transition-duration: 0.5s;
-	transition-duration: 0.5s;
-	-webkit-transition-property: height, width, -webkit-border-radius, border-radius;
-	transition-property: height, width, -webkit-border-radius, border-radius;
-	-webkit-transition-timing-function:ease-out;
-	transition-timing-function:ease-out; */
 }
 
 #home-bannerName{
