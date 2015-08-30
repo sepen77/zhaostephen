@@ -22,7 +22,7 @@ var withAddedFail = function(anopt, fail){
 
 // rounds to n decimal places
 var roundToNth = function(num, n){
-	return Math.round(num*Math.pow(10, n))/Math.pow(10, n);
+	return Math.round(num*n)/n;
 }
 
 // does resize on page elements depending on window size
@@ -34,14 +34,14 @@ var doResize = function() {
 		var maxWidth = 1920;
 		wndWidth = Math.min(wndWidth, maxWidth);
 		var fw = wndWidth*(10/maxWidth);
-		var fpc = roundToNth(fw*100/16, 2);
+		var fpc = roundToNth(fw*100/16, 0.16);
 		fpc = Math.max(fpc,25)
 	}
 	else {
 		var maxHeight = 1920;
 		wndHeight = Math.min(wndHeight, maxHeight);
 		var fw = wndHeight*(10/maxHeight);
-		var fpc = roundToNth(fw*100/8, 2);
+		var fpc = roundToNth(fw*100/8, 0.16);
 		fpc = Math.max(fpc,25)
 	}
 	$('html').css('font-size',fpc+'%');
