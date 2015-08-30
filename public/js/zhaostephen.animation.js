@@ -3,7 +3,7 @@
 //         ZHAOSTEPHEN ANIMATIONS 
 //==========================================
 
-console.log("loading animations")
+console.log("loading animations");
 
 // GLOBAL VARIABLES
 var bMouseHoverMenuCircle = false,
