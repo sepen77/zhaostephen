@@ -1,69 +1,29 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Stephen Zhao - Home</title>
-<link href="css/core.css" rel="stylesheet" type="text/css">
-<link href="css/home.css" rel="stylesheet" type="text/css">
-<link href="css/transitionPanels.css" rel="stylesheet" type="text/css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<script src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
-<script src="js/zhaostephen.core.js"></script>
-<script src="js/zhaostephen.animation.js"></script>
+    <meta charset="utf-8">
+    <title>Stephen Zhao - Home</title>
+    <!-- CSS -->
+    <link href="css/core.css" rel="stylesheet" type="text/css">
+    <link href="css/home.css" rel="stylesheet" type="text/css">
+    <link href="css/transitionPanels.css" rel="stylesheet" type="text/css">
+    <!-- JQUERY CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
+    <script src="//code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
+    <!-- OTHER SCRIPTS -->
+    <script src="js/scripts.js"></script>
+    <script src="js/zhaostephen.animation.js"></script>
+    <!-- ANGULAR CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-resource.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
 </head>
 
-<body>
-<div id="bg-color"></div>
-<div id="bg-img"></div>
-<div class="content">
-	<!--Mouseable Regions for Hover events-->
-	<div id="home-topMouseable" class="home-mouseableReg"></div>
-	<div id="home-leftMouseable" class="home-mouseableReg"></div>
-	<div id="home-rightMouseable" class="home-mouseableReg"></div>
-	<div id="home-bottomMouseable" class="home-mouseableReg"></div>
-    
-	<!--Transition Panels-->
-	<div id="transitionPanel-top" class="transitionPanel vertical">
-    	<div id="transitionPanel-profile-bg" class="transitionPanel-bg"></div>
-    	<div id="transitionPanel-profile-h" class="transitionPanel-heading v-align">Profile</div>
-    </div>
-	<div id="transitionPanel-left" class="transitionPanel horizontal">
-    	<div id="transitionPanel-projects-bg" class="transitionPanel-bg"></div>
-    	<div id="transitionPanel-projects-h" class="transitionPanel-heading v-align">Projects</div>
-    </div>
-	<div id="transitionPanel-right" class="transitionPanel horizontal">
-    	<div id="transitionPanel-contact-bg" class="transitionPanel-bg"></div>
-    	<div id="transitionPanel-contact-h" class="transitionPanel-heading v-align">Contact</div>
-    </div>
-	<div id="transitionPanel-bottom" class="transitionPanel vertical">
-    	<div id="transitionPanel-photos-bg" class="transitionPanel-bg"></div>
-    	<div id="transitionPanel-photos-h" class="transitionPanel-heading v-align">Imagenation Photography</div>
-    </div>
-    
-    <!--Name Banner Container-->
-    <div class="home-bannerNameContainer vc-align">
-        <div id="home-circle-1" class="home-menucircle">
-            <a id="home-circle-1-a" href="profile" class="home-menucircle">
-            </a>
-        </div>
-        <div id="home-circle-2" class="home-menucircle">
-            <a id="home-circle-2-a" href="projects" class="home-menucircle">
-            </a>
-        </div>
-        <div id="home-circle-3" class="home-menucircle">
-            <a id="home-circle-3-a" href="contact" class="home-menucircle">
-            </a>
-        </div>
-        <div id="home-circle-4" class="home-menucircle">
-            <a id="home-circle-4-a" href="imagenation" class="home-menucircle">
-            </a>
-        </div>
-        <div id="home-bannerName" class="v-align">
-            <span id="home-firstName">Stephen</span><br/>
-            <span id="home-lastName">Zhao</span>
-        </div>
-    </div>
-</div>
+<body ng-app="zhaostephenApp">
+    <ng-view></ng-view>
+    <!-- ANGULAR SCRIPTS -->
+    <!--script src="app/components/content/appContent.js"></script-->
+    <script src="app/app.js"></script>
 </body>
 </html>

@@ -3,6 +3,8 @@
 //         ZHAOSTEPHEN ANIMATIONS 
 //==========================================
 
+console.log("loading animations")
+
 // GLOBAL VARIABLES
 var bMouseHoverMenuCircle = false,
 	bClickedMenuCircle = false;
@@ -244,34 +246,28 @@ $(function() {
 		switch ($(this).attr('id')) {
 			case 'home-circle-1-a':
 				homeTransitionPanelShow('top');
-	//			$("#transitionPanel-top").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-	//				setTimeout(function() {window.open(href,"_self");},1000);
-	//			});
 				break;
 				
 			case 'home-circle-2-a':
 				homeTransitionPanelShow('left');
-	//			$("#transitionPanel-left").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-	//				setTimeout(function() {window.open(href,"_self");},1000);
-	//			});
 				break;
 				
 			case 'home-circle-3-a':
 				homeTransitionPanelShow('right');
-	//			$("#transitionPanel-right").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
-	//				setTimeout(function() {window.open(href,"_self");},1000);
-	//			});
 				break;
 				
 			case 'home-circle-4-a':
 				homeTransitionPanelShow('bottom');
-	//			$("#transitionPanel-bottom").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
 				break;
 			
 			default:
 				console.error('Animation error: Unknown element');
 		}
-		setTimeout(function() {window.open(href,"_self");},1500);
+		setTimeout(function() {
+			window.open(href,"_self");
+		},ANOPT_EASEOUT_1500.duration);
     });
 	
 });
+
+console.log("done loading animations");

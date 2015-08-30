@@ -10,15 +10,15 @@ module.exports = function() {
 		res.sendFile('index.html');
 	});
 	
-	app.get('/profile', function(req, res) {
+	app.get('/api/profile', function(req, res) {
 		res.sendFile('profile/index.html');
 	});
 	
-	app.get('/projects', function(req, res) {
+	app.get('/api/projects', function(req, res) {
 		res.sendFile('projects/index.html');
 	});
 	
-	app.get('/imagenation-photography', function(req, res) {
+	app.get('/api/photos', function(req, res) {
 		res.sendFile('imagenation-photography/index.html');
 	});
 	
