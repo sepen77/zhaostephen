@@ -1,14 +1,17 @@
 var app = angular.module("zhaostephenApp", [
-		"ngRoute"
+		"ngRoute",
+		"appHeaderBtn"
 	])
 	.config(function($routeProvider){
 		$routeProvider
 			.when("/", {
 				controller: "appHomeCtrl",
+				controllerAs: "ctrl",
 				templateUrl: "/app/components/home/home.html"
 			})
 			.when("/pages/:pageName", {
 				controller: "appPageCtrl",
+				controllerAs: "ctrl",
 				templateUrl: "/app/components/pages/pages.html"
 			})
 			.otherwise({
@@ -19,13 +22,13 @@ var app = angular.module("zhaostephenApp", [
 		// DOCUMENT READY FUNCTION
 		$(function() {
 			// ON PAGE LOAD EVENTS
-			$('.home-menucircle').hide();
+			$('.home.menucircle').hide();
 			$('.transitionPanel').children().hide();
 			
 			// ON HOVER TRIGGERED EVENTS
 			
 			// home-bannerNameContainer mouseenter and mouseleave events
-			$('div.home-bannerNameContainer').hover(function() {
+			$('#bannerNameContainer').hover(function() {
 		        homeMenuPeek();
 			},
 			function() {
@@ -33,7 +36,7 @@ var app = angular.module("zhaostephenApp", [
 		    });
 				
 			// home-menucircle hover events
-			$('#home-circle-1').hover(function() {
+			$('#circle-1').hover(function() {
 				homeTransitionPanelPeek('top');
 				bMouseHoverMenuCircle = true;
 			},
@@ -43,7 +46,7 @@ var app = angular.module("zhaostephenApp", [
 				}
 				bMouseHoverMenuCircle = false;
 			});
-			$('#home-circle-2').hover(function() {
+			$('#circle-2').hover(function() {
 				homeTransitionPanelPeek('left');
 				bMouseHoverMenuCircle = true;
 			},
@@ -53,7 +56,7 @@ var app = angular.module("zhaostephenApp", [
 				}
 				bMouseHoverMenuCircle = false;
 			});
-			$('#home-circle-3').hover(function() {
+			$('#circle-3').hover(function() {
 				homeTransitionPanelPeek('right');
 				bMouseHoverMenuCircle = true;
 			},
@@ -63,7 +66,7 @@ var app = angular.module("zhaostephenApp", [
 				}
 				bMouseHoverMenuCircle = false;
 			});
-			$('#home-circle-4').hover(function() {
+			$('#circle-4').hover(function() {
 				homeTransitionPanelPeek('bottom');
 				bMouseHoverMenuCircle = true;
 			},
@@ -75,25 +78,25 @@ var app = angular.module("zhaostephenApp", [
 			});
 
 			// home-menucircle onclick event
-			$('a.home-menucircle').click(function(e) {
+			$('.home.menucircle-a').click(function(e) {
 				bClickedMenuCircle = true;
 		        var href = $(this).attr('href');
 				e.preventDefault();
 				
 				switch ($(this).attr('id')) {
-					case 'home-circle-1-a':
+					case 'circle-1-a':
 						homeTransitionPanelShow('top');
 						break;
 						
-					case 'home-circle-2-a':
+					case 'circle-2-a':
 						homeTransitionPanelShow('left');
 						break;
 						
-					case 'home-circle-3-a':
+					case 'circle-3-a':
 						homeTransitionPanelShow('right');
 						break;
 						
-					case 'home-circle-4-a':
+					case 'circle-4-a':
 						homeTransitionPanelShow('bottom');
 						break;
 					
@@ -109,4 +112,29 @@ var app = angular.module("zhaostephenApp", [
 	})
 	.controller("appPageCtrl", function($scope, $routeParams){
 		this.pageName = $routeParams.pageName;
+		this.headerBtns = [
+		{
+			name: "profile",
+			title: "Profile",
+			text: "Profile",
+			url: "/#/pages/profile"
+		},
+		{
+			name: "projects",
+			title: "Projects",
+			text: "Projects",
+			url: "/#/pages/projects"
+		},
+		{
+			name: "photos",
+			title: "Photography",
+			text: "Photography",
+			url: "/#/pages/photos"
+		},
+		{
+			name: "contact",
+			title: "Contact",
+			text: "Contact",
+			url: "/#/pages/contact"
+		}]
 	});

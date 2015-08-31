@@ -61,7 +61,7 @@ Main Container
 Mouseable Regions
 =========================================
 */
-#home-topMouseable{
+.home#topMouseable{
 	position:absolute;
 	top:1px;
 	height:5%;
@@ -69,7 +69,7 @@ Mouseable Regions
 	z-index:160;
 }
 
-#home-bottomMouseable{
+.home#bottomMouseable{
 	position:absolute;
 	bottom:1px;
 	height:5%;
@@ -77,7 +77,7 @@ Mouseable Regions
 	z-index:160;
 }
 
-#home-leftMouseable{
+.home#leftMouseable{
 	position:absolute;
 	left:1px;
 	height:100%;
@@ -85,7 +85,7 @@ Mouseable Regions
 	z-index:160;
 }
 
-#home-rightMouseable{
+.home#rightMouseable{
 	position:absolute;
 	right:1px;
 	height:100%;
@@ -99,7 +99,7 @@ Mouseable Regions
 Banner Name
 =========================================
 */
-div.home-bannerNameContainer{
+.home#bannerNameContainer{
 	display:block;
 	position: absolute;
 	top:50%;
@@ -113,14 +113,14 @@ div.home-bannerNameContainer{
 	text-align: center;
 }
 
-#home-bannerName{
+.home#bannerName{
 	z-index: 131;
 	-webkit-transform: translateY(-58.5%);
 	-ms-transform: translateY(-58.5%);
 	transform: translateY(-58.5%);
 }
 
-#home-firstName{
+.home#firstName{
 	position: relative;
 	z-index: 133;
 	
@@ -132,7 +132,7 @@ div.home-bannerNameContainer{
 	text-transform: uppercase;
 }
 
-#home-lastName{
+.home#lastName{
 	position: relative;
 	z-index: 132;
 	
@@ -151,11 +151,11 @@ div.home-bannerNameContainer{
 Menu Circles
 =========================================
 */
-div.home-menucircle{
+.home.menucircle{
 	z-index: 1005;
 }
 
-a.home-menucircle{
+.home.menucircle-a{
 	position: relative;
 	display: block;
 	width:16px;
@@ -174,7 +174,7 @@ a.home-menucircle{
 	-moz-osx-font-smoothing: grayscale;
 }
 
-a.home-menucircle:before{
+.home.menucircle-a:before{
 	content: '';
 	position: absolute;
 	top: 0;
@@ -189,7 +189,7 @@ a.home-menucircle:before{
 
 }
 
-a.home-menucircle:hover:before, a.home-menucircle:focus:before, a.home-menucircle:active:before{
+.home.menucircle-a:hover:before, .home.menucircle-a:focus:before, .home.menucircle-a:active:before{
 	top: -8px;
 	right: -8px;
 	bottom: -8px;
@@ -198,22 +198,22 @@ a.home-menucircle:hover:before, a.home-menucircle:focus:before, a.home-menucircl
   	border-width: 2px;
 }
 
-#home-circle-1{
+.home#circle-1{
 	position: absolute;
 	top: calc(15% - 8px);
 	left: calc(50% - 8px);
 }
-#home-circle-2{
+.home#circle-2{
 	position: absolute;
 	top: calc(50% - 8px);
 	left: calc(15% - 8px);
 }
-#home-circle-3{
+.home#circle-3{
 	position: absolute;
 	top: calc(50% - 8px);
 	left: calc(85% - 8px);
 }
-#home-circle-4{
+.home#circle-4{
 	position: absolute;
 	top: calc(85% - 8px);
 	left: calc(50% - 8px);

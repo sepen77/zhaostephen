@@ -9,5 +9,5 @@ var appContent = angular.module("appContent", [])
 		};
 	})
 	.controller("appContentCtrl", function(){
-
+		
 	});
