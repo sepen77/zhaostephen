@@ -25,26 +25,26 @@ var homeTransitionPanelPeek = function(direction){
 	
 	switch (direction) {
 		case 'top':
-			$('#bg-img').animate({'top': '10%'},ANOPT_DEF);
-			$('#bg-img').animate({'height': '90%'},ANOPT_DEF);
+			$('.bg-img').animate({'top': '10%'},ANOPT_DEF);
+			$('.bg-img').animate({'height': '90%'},ANOPT_DEF);
 			$('#transitionPanel-'+direction).animate({'height': '10%'},ANOPT_DEF);
 			break;
 			
 		case 'bottom':
-			$('#bg-img').animate({'bottom': '10%'},ANOPT_DEF);
-			$('#bg-img').animate({'height': '90%'},ANOPT_DEF);
+			$('.bg-img').animate({'bottom': '10%'},ANOPT_DEF);
+			$('.bg-img').animate({'height': '90%'},ANOPT_DEF);
 			$('#transitionPanel-'+direction).animate({'height': '10%'},ANOPT_DEF);
 			break;
 	
 		case 'left':
-			$('#bg-img').animate({'left': '20%'},ANOPT_EASEOUT_1000);
-			$('#bg-img').animate({'width': '80%'},ANOPT_EASEOUT_1000);
+			$('.bg-img').animate({'left': '20%'},ANOPT_EASEOUT_1000);
+			$('.bg-img').animate({'width': '80%'},ANOPT_EASEOUT_1000);
 			$('#transitionPanel-'+direction).animate({'width': '20%'},ANOPT_EASEOUT_1000);
 			break;
 			
 		case 'right':
-			$('#bg-img').animate({'right': '20%'},ANOPT_EASEOUT_1000);
-			$('#bg-img').animate({'width': '80%'},ANOPT_EASEOUT_1000);
+			$('.bg-img').animate({'right': '20%'},ANOPT_EASEOUT_1000);
+			$('.bg-img').animate({'width': '80%'},ANOPT_EASEOUT_1000);
 			$('#transitionPanel-'+direction).animate({'width': '20%'},ANOPT_EASEOUT_1000);
 			break;
 		
@@ -64,18 +64,18 @@ var homeTransitionPanelShow = function(direction){
 	$('#transitionPanel-'+direction).children('.transitionPanel-heading').animate({
 		'color': '#1B1B1B',
 		'font-size': '6.4rem'},100);
-	$('#bg-img').animate(JSON.parse('{"'+direction+'" : "100%"}'),ANOPT_EASEOUT_1500);
+	$('.bg-img').animate(JSON.parse('{"'+direction+'" : "100%"}'),ANOPT_EASEOUT_1500);
 	
 	switch (direction) {
 		case 'top':
 		case 'bottom':
-			$('#bg-img').animate({'height': '0'}, ANOPT_EASEOUT_1500);
+			$('.bg-img').animate({'height': '0'}, ANOPT_EASEOUT_1500);
 			$('#transitionPanel-'+direction).animate({'height': '100%'}, ANOPT_EASEOUT_1500);
 			break;
 	
 		case 'left':
 		case 'right':
-			$('#bg-img').animate({'width': '0'}, ANOPT_EASEOUT_1500);
+			$('.bg-img').animate({'width': '0'}, ANOPT_EASEOUT_1500);
 			$('#transitionPanel-'+direction).animate({'width': '100%'}, ANOPT_EASEOUT_1500);
 			break;
 		
@@ -93,15 +93,15 @@ var homeTransitionPanelRevert = function(direction){
 	switch (direction) {
 		case 'top':
 		case 'bottom':
-			$('#bg-img').animate(JSON.parse('{"'+direction+'" : "0"}'),ANOPT_DEF);
-			$('#bg-img').animate({'height': '100%'}, ANOPT_DEF);
+			$('.bg-img').animate(JSON.parse('{"'+direction+'" : "0"}'),ANOPT_DEF);
+			$('.bg-img').animate({'height': '100%'}, ANOPT_DEF);
 			$('#transitionPanel-'+direction).animate({'height': '0'}, ANOPT_DEF);
 			break;
 		
 		case 'left':
 		case 'right':
-			$('#bg-img').animate(JSON.parse('{"'+direction+'" : "0"}'),ANOPT_EASEOUT_1000);
-			$('#bg-img').animate({'width': '100%'}, ANOPT_EASEOUT_1000);
+			$('.bg-img').animate(JSON.parse('{"'+direction+'" : "0"}'),ANOPT_EASEOUT_1000);
+			$('.bg-img').animate({'width': '100%'}, ANOPT_EASEOUT_1000);
 			$('#transitionPanel-'+direction).animate({'width': '0'}, ANOPT_EASEOUT_1000);
 			break;
 		
