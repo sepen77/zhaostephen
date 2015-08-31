@@ -5,11 +5,11 @@ var app = angular.module("zhaostephenApp", [
 		$routeProvider
 			.when("/", {
 				controller: "appHomeCtrl",
-				templateUrl: "app/components/home/home.html"
+				templateUrl: "/app/components/home/home.html"
 			})
 			.when("/pages/:pageName", {
 				controller: "appPageCtrl",
-				templateUrl: "app/components/pages/pages.html"
+				templateUrl: "/app/components/pages/pages.html"
 			})
 			.otherwise({
 				redirectTo: "/"
