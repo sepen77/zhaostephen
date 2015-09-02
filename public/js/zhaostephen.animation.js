@@ -118,14 +118,14 @@ var homeMenuPeek = function(){
 		'border-radius':'35rem'
 		}, ANOPT_DEF);
 	setTimeout(function(){
+		$('#bannerName').stop().fadeOut(ANOPT_DEF);
 		$('#bannerLogo').stop().fadeIn(withAddedComplete(ANOPT_DEF, function(){
 			$('#bannerLogo').css({'opacity':'100%'});
 		}));
+		$('.home.menucircle').stop().fadeIn(withAddedComplete(ANOPT_DEF, function(){
+			$('.home.menucircle').css({'opacity':'100%'});
+		}));
 	}, 300);
-	$('#bannerName').stop().fadeOut(ANOPT_DEF);
-	$('.home.menucircle').stop().fadeIn(withAddedComplete(ANOPT_DEF, function(){
-		$('.home.menucircle').css({'opacity':'100%'});
-	}));
 }
 
 var homeMenuRevert = function(){
@@ -135,11 +135,13 @@ var homeMenuRevert = function(){
 		'-webkit-border-radius':'0rem',
 		'border-radius':'0rem'
 		}, ANOPT_DEF);
-	$('#bannerName').stop().fadeIn(withAddedComplete(ANOPT_DEF, function(){
-		$('#bannerName').css({'opacity':'100%'});
-	}));
-	$('#bannerLogo').stop().fadeOut(ANOPT_DEF);
-	$('.home.menucircle').stop().fadeOut(ANOPT_DEF);
+	setTimeout(function(){
+		$('#bannerLogo').stop().fadeOut(ANOPT_DEF);
+		$('#bannerName').stop().fadeIn(withAddedComplete(ANOPT_DEF, function(){
+			$('#bannerName').css({'opacity':'100%'});
+		}));
+		$('.home.menucircle').stop().fadeOut(ANOPT_DEF);
+	}, 300);
 }
 
 // DOCUMENT READY FUNCTION
