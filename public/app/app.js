@@ -24,6 +24,7 @@ var app = angular.module("zhaostephenApp", [
 			// ON PAGE LOAD EVENTS
 			$('.home.menucircle').hide();
 			$('.transitionPanel').children().hide();
+			$('#bannerLogo').hide();
 			
 			// ON HOVER TRIGGERED EVENTS
 			
@@ -36,7 +37,7 @@ var app = angular.module("zhaostephenApp", [
 		    });
 				
 			// home-menucircle hover events
-			$('#circle-1').hover(function() {
+			$('#circle-1-a').hover(function() {
 				homeTransitionPanelPeek('top');
 				bMouseHoverMenuCircle = true;
 			},
@@ -46,7 +47,7 @@ var app = angular.module("zhaostephenApp", [
 				}
 				bMouseHoverMenuCircle = false;
 			});
-			$('#circle-2').hover(function() {
+			$('#circle-2-a').hover(function() {
 				homeTransitionPanelPeek('left');
 				bMouseHoverMenuCircle = true;
 			},
@@ -56,7 +57,7 @@ var app = angular.module("zhaostephenApp", [
 				}
 				bMouseHoverMenuCircle = false;
 			});
-			$('#circle-3').hover(function() {
+			$('#circle-3-a').hover(function() {
 				homeTransitionPanelPeek('right');
 				bMouseHoverMenuCircle = true;
 			},
@@ -66,7 +67,7 @@ var app = angular.module("zhaostephenApp", [
 				}
 				bMouseHoverMenuCircle = false;
 			});
-			$('#circle-4').hover(function() {
+			$('#circle-4-a').hover(function() {
 				homeTransitionPanelPeek('bottom');
 				bMouseHoverMenuCircle = true;
 			},

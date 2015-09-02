@@ -7,8 +7,12 @@
 /
 /*******************************************************/
 .transitionPanel{
-	z-index: 150;
+	display:block;
+	z-index: 500;
+	position:absolute;
 	text-align: center;
+
+	background-color:#000000;
 }
 
 .transitionPanel.vertical{
@@ -41,35 +45,19 @@
 
 
 #transitionPanel-top{
-	display:block;
-	position:absolute;
 	top:0;
-	
-	background-color:#000000;
 }
 
 #transitionPanel-bottom{
-	display:block;
-	position:absolute;
 	bottom:0;
-	
-	background-color:#000000;
 }
 
 #transitionPanel-left{
-	display:block;
-	position:absolute;
 	left:0;
-	
-	background-color:#000000;
 }
 
 #transitionPanel-right{
-	display:block;
-	position:absolute;
 	right:0;
-	
-	background-color:#000000;
 }
 
 #transitionPanel-home-bg{

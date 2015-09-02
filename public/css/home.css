@@ -9,9 +9,8 @@ Background
 	position: fixed;
 	left: 0;
 	top: 0;
-	z-index: -1;
-	
-	display: block;
+	z-index: 11;
+
 	width: 100%;
 	height: 100%;
 	
@@ -22,14 +21,13 @@ Background
 	position: fixed;
 	left: 0;
 	top: 0;
-	z-index: -1;
-	
-	display: block;
+	z-index: 12;
+
 	width: 100%;
 	height: 100%;
+
 	background-position: center;
 	background-repeat: no-repeat;
-	
 	background-image: url(../img/index-bg01.jpg);
 	-webkit-filter: blur(10px) brightness(1);
 	-moz-filter: blur(10px) brightness(1);
@@ -48,20 +46,18 @@ Main Container
 	left: 0;
 	top: 0;
 	z-index: 100;
-	
-	display: block;
+
 	width: 100%;
 	height: 100%;
-	
-	text-align:center;
 }
 
 /*
 =========================================
-Mouseable Regions
+Mouseable Regions <--- DISABLED FOR NOW
 =========================================
 */
-.home#topMouseable{
+
+/*.home#topMouseable{
 	position:absolute;
 	top:1px;
 	height:5%;
@@ -91,7 +87,7 @@ Mouseable Regions
 	height:100%;
 	width:5%;
 	z-index:160;
-}
+}*/
 
 
 /*
@@ -100,51 +96,60 @@ Banner Name
 =========================================
 */
 .home#bannerNameContainer{
-	display:block;
 	position: absolute;
-	top:50%;
+	z-index: 133;
+	
 	width:56rem;
-	left:50%;
 	height: 30rem;
-	z-index: 130;
 	
 	border:#1B1B1B solid 2px;
-	
-	text-align: center;
 }
 
 .home#bannerName{
-	z-index: 131;
+	z-index: 135;
 	-webkit-transform: translateY(-58.5%);
 	-ms-transform: translateY(-58.5%);
 	transform: translateY(-58.5%);
+
+	text-align: center;
 }
 
 .home#firstName{
 	position: relative;
-	z-index: 133;
+	z-index: 136;
 	
 	font-size: 7.2rem;
 	font-family: 'Martel Sans', Arial, sans-serif;
-	font-weight: 300; 
-	text-align: center;
+	font-weight: 300;
 	color: #1B1B1B;
 	text-transform: uppercase;
 }
 
 .home#lastName{
 	position: relative;
-	z-index: 132;
 	
 	font-size: 11rem;
 	font-family: 'Martel Sans', Arial, sans-serif;
-	font-weight: 800; 
-	text-align: center;
+	font-weight: 800;
 	line-height:2rem;
 	color: #1B1B1B;
 	text-transform: uppercase;
 }
 
+.home#bannerLogo{
+	position: absolute;
+	z-index: 131;
+
+	-webkit-border-radius:35rem;
+	border-radius:35rem;
+}
+
+.home#bannerLogoImg{
+	width: 70rem;
+
+	-webkit-border-radius:35rem;
+	border-radius:35rem;
+}
 
 /*
 =========================================
@@ -152,21 +157,42 @@ Menu Circles
 =========================================
 */
 .home.menucircle{
-	z-index: 1005;
+	position: absolute;
+	z-index: 140;
+
+	width:32px;
+	height:32px;
+}
+
+.home#circle-1{
+	top: calc(15%);
+	left: calc(50%);
+}
+.home#circle-2{
+	top: calc(50%);
+	left: calc(15%);
+}
+.home#circle-3{
+	top: calc(50%);
+	left: calc(85%);
+}
+.home#circle-4{
+	top: calc(85%);
+	left: calc(50%);
 }
 
 .home.menucircle-a{
-	position: relative;
 	display: block;
 	width:16px;
 	height:16px;
 	
 	cursor:pointer;
 	
-	background-color:#1B1B1B;
+	background-color:#EEE;
 	
-	-webkit-border-radius:8px;
-	border-radius:8px;
+	border: #EEE solid 2px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
 	
 	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 	-webkit-backface-visibility: hidden;
@@ -174,47 +200,30 @@ Menu Circles
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.home.menucircle-a:before{
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	
-	border: #1B1B1B solid 2px;
+.home.menucircle-a:hover, .home.menucircle-a:focus, .home.menucircle-a:active{  
+  	border-width: 2px;
 	
 	-webkit-border-radius:16px;
 	border-radius:16px;
 
 }
 
-.home.menucircle-a:hover:before, .home.menucircle-a:focus:before, .home.menucircle-a:active:before{
-	top: -8px;
-	right: -8px;
-	bottom: -8px;
-	left: -8px;
-  
-  	border-width: 2px;
+.home#circle-1-a:hover{
+	background-color:#81C784;
+	border-color: #81C784;
 }
 
-.home#circle-1{
-	position: absolute;
-	top: calc(15% - 8px);
-	left: calc(50% - 8px);
+.home#circle-2-a:hover{
+	background-color:#4FC3F7;
+	border-color: #4FC3F7;
 }
-.home#circle-2{
-	position: absolute;
-	top: calc(50% - 8px);
-	left: calc(15% - 8px);
+
+.home#circle-3-a:hover{
+	background-color:#FFD54F;
+	border-color: #FFD54F;
 }
-.home#circle-3{
-	position: absolute;
-	top: calc(50% - 8px);
-	left: calc(85% - 8px);
-}
-.home#circle-4{
-	position: absolute;
-	top: calc(85% - 8px);
-	left: calc(50% - 8px);
+
+.home#circle-4-a:hover{
+	background-color:#E57373;
+	border-color: #E57373;
 }
