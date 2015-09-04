@@ -18,88 +18,85 @@ var app = angular.module("zhaostephenApp", [
 				redirectTo: "/"
 			});
 	})
-	.controller("appHomeCtrl", function($scope){
+	.controller("appHomeCtrl", function($scope, animService){
 		// DOCUMENT READY FUNCTION
 		$(function() {
 			// ON PAGE LOAD EVENTS
-			bClickedMenuCircle = false;
-			$('.home.menucircle').hide();
-			$('.transitionPanel').children().hide();
-			$('#bannerLogo').hide();
+			animService.resetAll();
 			
 			// ON HOVER TRIGGERED EVENTS
 			
 			// home-bannerNameContainer mouseenter and mouseleave events
 			$('#bannerNameContainer').hover(function() {
-		        homeMenuPeek();
+		        animService.homeMenuPeek();
 			},
 			function() {
-				homeMenuRevert();
+				animService.homeMenuRevert();
 		    });
 				
 			// home-menucircle hover events
 			$('#circle-1-a').hover(function() {
-				homeTransitionPanelPeek('top');
-				bMouseHoverMenuCircle = true;
+				animService.homeTransitionPanelPeek('top');
+				animService.bMouseHoverMenuCircle = true;
 			},
 			function() {
-				if (!bClickedMenuCircle) {
-					homeTransitionPanelRevert('top');
+				if (!animService.bClickedMenuCircle) {
+					animService.homeTransitionPanelRevert('top');
 				}
-				bMouseHoverMenuCircle = false;
+				animService.bMouseHoverMenuCircle = false;
 			});
 			$('#circle-2-a').hover(function() {
-				homeTransitionPanelPeek('left');
-				bMouseHoverMenuCircle = true;
+				animService.homeTransitionPanelPeek('left');
+				animService.bMouseHoverMenuCircle = true;
 			},
 			function() {
-				if (!bClickedMenuCircle) {
-					homeTransitionPanelRevert('left');
+				if (!animService.bClickedMenuCircle) {
+					animService.homeTransitionPanelRevert('left');
 				}
-				bMouseHoverMenuCircle = false;
+				animService.bMouseHoverMenuCircle = false;
 			});
 			$('#circle-3-a').hover(function() {
-				homeTransitionPanelPeek('right');
-				bMouseHoverMenuCircle = true;
+				animService.homeTransitionPanelPeek('right');
+				animService.bMouseHoverMenuCircle = true;
 			},
 			function() {
-				if (!bClickedMenuCircle) {
-					homeTransitionPanelRevert('right');
+				if (!animService.bClickedMenuCircle) {
+					animService.homeTransitionPanelRevert('right');
 				}
-				bMouseHoverMenuCircle = false;
+				animService.bMouseHoverMenuCircle = false;
 			});
 			$('#circle-4-a').hover(function() {
-				homeTransitionPanelPeek('bottom');
-				bMouseHoverMenuCircle = true;
+				animService.homeTransitionPanelPeek('bottom');
+				animService.bMouseHoverMenuCircle = true;
 			},
 			function() {
-				if (!bClickedMenuCircle) {
-					homeTransitionPanelRevert('bottom');
+				if (!animService.bClickedMenuCircle) {
+					animService.homeTransitionPanelRevert('bottom');
 				}
-				bMouseHoverMenuCircle = false;
+				animService.bMouseHoverMenuCircle = false;
 			});
 
 			// home-menucircle onclick event
 			$('.home.menucircle-a').click(function(e) {
-				bClickedMenuCircle = true;
+				animService.bClickedMenuCircle = true;
 		        var href = $(this).attr('href');
 				e.preventDefault();
 				
 				switch ($(this).attr('id')) {
 					case 'circle-1-a':
-						homeTransitionPanelShow('top');
+						animService.homeTransitionPanelShow('top');
 						break;
 						
 					case 'circle-2-a':
-						homeTransitionPanelShow('left');
+						animService.homeTransitionPanelShow('left');
 						break;
 						
 					case 'circle-3-a':
-						homeTransitionPanelShow('right');
+						animService.homeTransitionPanelShow('right');
 						break;
 						
 					case 'circle-4-a':
-						homeTransitionPanelShow('bottom');
+						animService.homeTransitionPanelShow('bottom');
 						break;
 					
 					default:
@@ -107,7 +104,7 @@ var app = angular.module("zhaostephenApp", [
 				}
 				setTimeout(function() {
 					window.open(href,"_self");
-				},ANOPT_EASEOUT_1500.duration);
+				},1500);
 		    });
 			
 		});

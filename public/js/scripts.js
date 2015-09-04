@@ -1,6 +1,4 @@
 // JavaScript Document
-console.log("loading scripts");
-
 // UTIL FUNCTIONS
 // adds a 'complete' function for pre-specified animation options
 var withAddedComplete = function(anopt, complete){
@@ -54,5 +52,3 @@ $(function(){
 		doResize();
 	}).trigger('resize');
 });
-
-console.log("done loading scripts");
