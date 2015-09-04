@@ -10,7 +10,6 @@
 	display:block;
 	z-index: 500;
 	position:absolute;
-	text-align: center;
 
 	background-color:#000000;
 }
@@ -27,9 +26,10 @@
 }
 
 .transitionPanel-heading{
+	display:inline-block;
+
 	font-size: 3.6rem;
 	font-family: 'Martel Sans', Arial, sans-serif;
-	text-align: center;
 	line-height:3rem;
 	color: #EEE;
 	text-transform: uppercase;

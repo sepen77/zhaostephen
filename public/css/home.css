@@ -194,7 +194,7 @@ Menu Circles
 	-webkit-border-radius:10px;
 	border-radius:10px;
 	
-	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	box-shadow: 0 0 40px 15px rgba(0, 0, 0, 255);
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	-moz-osx-font-smoothing: grayscale;
@@ -206,6 +206,7 @@ Menu Circles
 	-webkit-border-radius:16px;
 	border-radius:16px;
 
+	box-shadow: 0 0 30px 15px rgba(255, 255, 255, 255);
 }
 
 .home#circle-1-a:hover{
