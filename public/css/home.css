@@ -112,6 +112,7 @@ Banner Name
 	transform: translateY(-58.5%);
 
 	text-align: center;
+	line-height:normal;
 }
 
 .home#firstName{
@@ -131,7 +132,7 @@ Banner Name
 	font-size: 11rem;
 	font-family: 'Martel Sans', Arial, sans-serif;
 	font-weight: 800;
-	line-height:2rem;
+	line-height: 2rem;
 	color: #1B1B1B;
 	text-transform: uppercase;
 }
@@ -162,6 +163,7 @@ Menu Circles
 
 	width:32px;
 	height:32px;
+
 }
 
 .home#circle-1{
@@ -188,13 +190,13 @@ Menu Circles
 	
 	cursor:pointer;
 	
-	background-color:#EEE;
-	
-	border: #EEE solid 2px;
+	background-color: #1B1B1B;
+	border: #1B1B1B solid 2px;
 	-webkit-border-radius:10px;
 	border-radius:10px;
 	
-	box-shadow: 0 0 40px 15px rgba(0, 0, 0, 255);
+	box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.5);
+	box-sizing: content-box;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	-moz-osx-font-smoothing: grayscale;
@@ -203,28 +205,34 @@ Menu Circles
 .home.menucircle-a:hover, .home.menucircle-a:focus, .home.menucircle-a:active{  
   	border-width: 2px;
 	
+  	background-color: rgba(255, 255, 255, 0.5);
+
 	-webkit-border-radius:16px;
 	border-radius:16px;
 
-	box-shadow: 0 0 30px 15px rgba(255, 255, 255, 255);
+	box-shadow: 0 0 30px 15px rgba(255, 255, 255, 1);
 }
 
 .home#circle-1-a:hover{
-	background-color:#4CAF50;
+  	/*background-color: rgba(76, 175, 80, 0.8);*/
+  	background-color: #4CAF50;
 	border-color: #4CAF50;
 }
 
 .home#circle-2-a:hover{
-	background-color:#2196F3;
+  	/*background-color: rgba(33, 150, 243, 0.8);*/
+  	background-color: #2196F3; 
 	border-color: #2196F3;
 }
 
 .home#circle-3-a:hover{
-	background-color:#FFC107;
+  	/*background-color: rgba(255, 193, 7, 0.8);*/
+  	background-color: #FFC107; 
 	border-color: #FFC107;
 }
 
 .home#circle-4-a:hover{
-	background-color:#F44336;
+  	/*background-color: rgba(244, 67, 54, 0.8);*/
+  	background-color: #F44336; 
 	border-color: #F44336;
 }

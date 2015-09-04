@@ -123,15 +123,16 @@ app.factory("animService", function(){
 			'-webkit-border-radius':'35rem',
 			'border-radius':'35rem'
 			}, service.ANOPT_DEF);
-		setTimeout(function(){
+		//setTimeout(function(){
 			$('#bannerName').stop().fadeOut(service.ANOPT_DEF);
 			$('#bannerLogo').stop().fadeIn(withAddedComplete(service.ANOPT_DEF, function(){
 				$('#bannerLogo').css({'opacity':'100%'});
 			}));
 			$('.home.menucircle').stop().fadeIn(withAddedComplete(service.ANOPT_DEF, function(){
+				
 				$('.home.menucircle').css({'opacity':'100%'});
 			}));
-		}, 300);
+		//}, 300);
 	}
 
 	service.homeMenuRevert = function(){
@@ -141,13 +142,13 @@ app.factory("animService", function(){
 			'-webkit-border-radius':'0rem',
 			'border-radius':'0rem'
 			}, service.ANOPT_DEF);
-		setTimeout(function(){
+		//setTimeout(function(){
 			$('#bannerLogo').stop().fadeOut(service.ANOPT_DEF);
 			$('#bannerName').stop().fadeIn(withAddedComplete(service.ANOPT_DEF, function(){
 				$('#bannerName').css({'opacity':'100%'});
 			}));
 			$('.home.menucircle').stop().fadeOut(service.ANOPT_DEF);
-		}, 300);
+		//}, 300);
 	}
 
 	return service;
