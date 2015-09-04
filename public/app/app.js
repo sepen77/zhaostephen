@@ -22,6 +22,7 @@ var app = angular.module("zhaostephenApp", [
 		// DOCUMENT READY FUNCTION
 		$(function() {
 			// ON PAGE LOAD EVENTS
+			bClickedMenuCircle = false;
 			$('.home.menucircle').hide();
 			$('.transitionPanel').children().hide();
 			$('#bannerLogo').hide();

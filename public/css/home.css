@@ -209,21 +209,21 @@ Menu Circles
 }
 
 .home#circle-1-a:hover{
-	background-color:#81C784;
-	border-color: #81C784;
+	background-color:#4CAF50;
+	border-color: #4CAF50;
 }
 
 .home#circle-2-a:hover{
-	background-color:#4FC3F7;
-	border-color: #4FC3F7;
+	background-color:#2196F3;
+	border-color: #2196F3;
 }
 
 .home#circle-3-a:hover{
-	background-color:#FFD54F;
-	border-color: #FFD54F;
+	background-color:#FFC107;
+	border-color: #FFC107;
 }
 
 .home#circle-4-a:hover{
-	background-color:#E57373;
-	border-color: #E57373;
+	background-color:#F44336;
+	border-color: #F44336;
 }
