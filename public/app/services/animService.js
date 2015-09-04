@@ -61,25 +61,27 @@ app.factory("animService", function(){
 	}
 
 	service.homeTransitionPanelShow = function(direction){
+		transitionPanel = $('#transitionPanel-'+direction);
+		bgImg = $('.bg-img');
 		// stop
-		$('#transitionPanel-'+direction).stop();
-		$('#transitionPanel-'+direction).children('.transitionPanel-bg').fadeIn(service.ANOPT_EASEOUT_300);
-		$('#transitionPanel-'+direction).children('.transitionPanel-heading').animate({
+		transitionPanel.stop();
+		transitionPanel.children('.transitionPanel-bg').fadeIn(service.ANOPT_EASEOUT_300);
+		transitionPanel.children('.transitionPanel-heading').animate({
 			'color': '#1B1B1B',
 			'font-size': '6.4rem'},100);
-		$('.bg-img').animate(JSON.parse('{"'+direction+'" : "100%"}'),service.ANOPT_EASEOUT_1500);
+		bgImg.animate(JSON.parse('{"'+direction+'" : "100%"}'),service.ANOPT_EASEOUT_1500);
 		
 		switch (direction) {
 			case 'top':
 			case 'bottom':
-				$('.bg-img').animate({'height': '0'}, service.ANOPT_EASEOUT_1500);
-				$('#transitionPanel-'+direction).animate({'height': '100%'}, service.ANOPT_EASEOUT_1500);
+				bgImg.animate({'height': '0'}, service.ANOPT_EASEOUT_1500);
+				transitionPanel.animate({'height': '100%'}, service.ANOPT_EASEOUT_1500);
 				break;
 		
 			case 'left':
 			case 'right':
-				$('.bg-img').animate({'width': '0'}, service.ANOPT_EASEOUT_1500);
-				$('#transitionPanel-'+direction).animate({'width': '100%'}, service.ANOPT_EASEOUT_1500);
+				bgImg.animate({'width': '0'}, service.ANOPT_EASEOUT_1500);
+				transitionPanel.animate({'width': '100%'}, service.ANOPT_EASEOUT_1500);
 				break;
 			
 			default:
@@ -88,24 +90,25 @@ app.factory("animService", function(){
 	}
 
 	service.homeTransitionPanelRevert = function(direction){
+		transitionPanel = $('#transitionPanel-'+direction);
+		bgImg = $('.bg-img');
 		// stop
-		$('#transitionPanel-'+direction).stop();
-		
-		$('#transitionPanel-'+direction).children().stop().fadeOut(500);
+		transitionPanel.stop();
+		transitionPanel.children().stop().fadeOut(500);
 		
 		switch (direction) {
 			case 'top':
 			case 'bottom':
-				$('.bg-img').animate(JSON.parse('{"'+direction+'" : "0"}'),service.ANOPT_DEF);
-				$('.bg-img').animate({'height': '100%'}, service.ANOPT_DEF);
-				$('#transitionPanel-'+direction).animate({'height': '0'}, service.ANOPT_DEF);
+				bgImg.animate(JSON.parse('{"'+direction+'" : "0"}'),service.ANOPT_DEF);
+				bgImg.animate({'height': '100%'}, service.ANOPT_DEF);
+				transitionPanel.animate({'height': '0'}, service.ANOPT_DEF);
 				break;
 			
 			case 'left':
 			case 'right':
-				$('.bg-img').animate(JSON.parse('{"'+direction+'" : "0"}'),service.ANOPT_EASEOUT_1000);
-				$('.bg-img').animate({'width': '100%'}, service.ANOPT_EASEOUT_1000);
-				$('#transitionPanel-'+direction).animate({'width': '0'}, service.ANOPT_EASEOUT_1000);
+				bgImg.animate(JSON.parse('{"'+direction+'" : "0"}'),service.ANOPT_EASEOUT_1000);
+				bgImg.animate({'width': '100%'}, service.ANOPT_EASEOUT_1000);
+				transitionPanel.animate({'width': '0'}, service.ANOPT_EASEOUT_1000);
 				break;
 			
 			default:
