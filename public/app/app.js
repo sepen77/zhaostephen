@@ -22,7 +22,7 @@ var app = angular.module("zhaostephenApp", [
 		// DOCUMENT READY FUNCTION
 		$(function() {
 			// ON PAGE LOAD EVENTS
-			animService.resetAll();
+			animService.resetAll('home');
 			
 			// ON HOVER TRIGGERED EVENTS
 			
@@ -109,7 +109,7 @@ var app = angular.module("zhaostephenApp", [
 			
 		});
 	})
-	.controller("appPageCtrl", function($scope, $routeParams){
+	.controller("appPageCtrl", function($scope, $routeParams, animService){
 		this.pageName = $routeParams.pageName;
 		this.headerBtns = [
 		{
@@ -136,4 +136,8 @@ var app = angular.module("zhaostephenApp", [
 			text: "Contact",
 			url: "/#/pages/contact"
 		}]
+
+		$(function() {
+			animService.resetAll($routeParams.pageName);
+		})
 	});

@@ -14,11 +14,31 @@ app.factory("animService", function(){
 
 	service.ANOPT_DEF = service.ANOPT_EASEOUT_800;
 
-	service.resetAll = function(){
-		service.bClickedMenuCircle = false;
-		$('.home .menucircle').hide();
-		$('.transitionPanel').children().hide();
-		$('#bannerLogo').hide();
+	service.resetAll = function(pageName){
+		switch(pageName){
+			case 'home':
+				service.bClickedMenuCircle = false;
+				$('.home .menucircle').hide();
+				$('.transitionPanel').children().hide();
+				$('#bannerLogo').hide();
+				break;
+
+			case 'profile':
+				$('.pages #nav-btn-profile').addClass('active');
+				break;
+
+			case 'projects':
+				$('.pages #nav-btn-projects').addClass('active');
+				break;
+
+			case 'photos':
+				$('.pages #nav-btn-photos').addClass('active');
+				break;
+
+			case 'contact':
+				$('.pages #nav-btn-contact').addClass('active');
+				break;
+		}
 	}
 
 	//ANIMATION FUNCTIONS DEF

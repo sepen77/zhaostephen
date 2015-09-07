@@ -1,9 +1,23 @@
 /*
 =========================================
+Navbar
+=========================================
+*/
+#nav-header-home-img {
+	height:100%;
+	border-radius:50%;
+}
+
+#nav-header-home-img:hover {
+	background-color:#EEE;
+	box-shadow: 0 0 10px 5px rgba(255, 255, 255, 1);
+}
+/*
+=========================================
 Header
 =========================================
 */
-#header{
+/*#header{
 	position:fixed;
 	left: 0;
 	top: 0;
@@ -35,7 +49,7 @@ Header
 
 app-header-btn{
 	display:inline;
-}
+}*/
 
 
 
