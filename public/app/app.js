@@ -77,7 +77,7 @@ var app = angular.module("zhaostephenApp", [
 			});
 
 			// home-menucircle onclick event
-			$('.home.menucircle-a').click(function(e) {
+			$('.home .menucircle-a').click(function(e) {
 				animService.bClickedMenuCircle = true;
 		        var href = $(this).attr('href');
 				e.preventDefault();

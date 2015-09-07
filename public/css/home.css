@@ -5,7 +5,7 @@
 Background
 =========================================
 */
-.home.bg-color{
+.home .bg-color{
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -17,7 +17,7 @@ Background
 	background-color:#1B1B1B;
 }
 
-.home.bg-img{
+.home .bg-img{
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -57,7 +57,7 @@ Mouseable Regions <--- DISABLED FOR NOW
 =========================================
 */
 
-/*.home#topMouseable{
+/*.home #topMouseable{
 	position:absolute;
 	top:1px;
 	height:5%;
@@ -65,7 +65,7 @@ Mouseable Regions <--- DISABLED FOR NOW
 	z-index:160;
 }
 
-.home#bottomMouseable{
+.home #bottomMouseable{
 	position:absolute;
 	bottom:1px;
 	height:5%;
@@ -73,7 +73,7 @@ Mouseable Regions <--- DISABLED FOR NOW
 	z-index:160;
 }
 
-.home#leftMouseable{
+.home #leftMouseable{
 	position:absolute;
 	left:1px;
 	height:100%;
@@ -81,7 +81,7 @@ Mouseable Regions <--- DISABLED FOR NOW
 	z-index:160;
 }
 
-.home#rightMouseable{
+.home #rightMouseable{
 	position:absolute;
 	right:1px;
 	height:100%;
@@ -95,7 +95,7 @@ Mouseable Regions <--- DISABLED FOR NOW
 Banner Name
 =========================================
 */
-.home#bannerNameContainer{
+.home #bannerNameContainer{
 	position: absolute;
 	z-index: 133;
 	
@@ -105,7 +105,7 @@ Banner Name
 	border:#1B1B1B solid 2px;
 }
 
-.home#bannerName{
+.home #bannerName{
 	z-index: 135;
 	-webkit-transform: translateY(-58.5%);
 	-ms-transform: translateY(-58.5%);
@@ -115,7 +115,7 @@ Banner Name
 	line-height:normal;
 }
 
-.home#firstName{
+.home #firstName{
 	position: relative;
 	z-index: 136;
 	
@@ -126,7 +126,7 @@ Banner Name
 	text-transform: uppercase;
 }
 
-.home#lastName{
+.home #lastName{
 	position: relative;
 	
 	font-size: 11rem;
@@ -137,7 +137,7 @@ Banner Name
 	text-transform: uppercase;
 }
 
-.home#bannerLogo{
+.home #bannerLogo{
 	position: absolute;
 	z-index: 131;
 
@@ -145,7 +145,7 @@ Banner Name
 	border-radius:35rem;
 }
 
-.home#bannerLogoImg{
+.home #bannerLogoImg{
 	width: 70rem;
 
 	-webkit-border-radius:35rem;
@@ -157,7 +157,7 @@ Banner Name
 Menu Circles
 =========================================
 */
-.home.menucircle{
+.home .menucircle{
 	position: absolute;
 	z-index: 140;
 
@@ -166,24 +166,24 @@ Menu Circles
 
 }
 
-.home#circle-1{
+.home #circle-1{
 	top: calc(15%);
 	left: calc(50%);
 }
-.home#circle-2{
+.home #circle-2{
 	top: calc(50%);
 	left: calc(15%);
 }
-.home#circle-3{
+.home #circle-3{
 	top: calc(50%);
 	left: calc(85%);
 }
-.home#circle-4{
+.home #circle-4{
 	top: calc(85%);
 	left: calc(50%);
 }
 
-.home.menucircle-a{
+.home .menucircle-a{
 	display: block;
 	width:16px;
 	height:16px;
@@ -202,7 +202,7 @@ Menu Circles
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.home.menucircle-a:hover, .home.menucircle-a:focus, .home.menucircle-a:active{  
+.home .menucircle-a:hover, .home .menucircle-a:focus, .home .menucircle-a:active{  
   	border-width: 2px;
 	
   	background-color: rgba(255, 255, 255, 0.5);
@@ -213,25 +213,25 @@ Menu Circles
 	box-shadow: 0 0 30px 15px rgba(255, 255, 255, 1);
 }
 
-.home#circle-1-a:hover{
+.home #circle-1-a:hover{
   	/*background-color: rgba(76, 175, 80, 0.8);*/
   	background-color: #4CAF50;
 	border-color: #4CAF50;
 }
 
-.home#circle-2-a:hover{
+.home #circle-2-a:hover{
   	/*background-color: rgba(33, 150, 243, 0.8);*/
   	background-color: #2196F3; 
 	border-color: #2196F3;
 }
 
-.home#circle-3-a:hover{
+.home #circle-3-a:hover{
   	/*background-color: rgba(255, 193, 7, 0.8);*/
   	background-color: #FFC107; 
 	border-color: #FFC107;
 }
 
-.home#circle-4-a:hover{
+.home #circle-4-a:hover{
   	/*background-color: rgba(244, 67, 54, 0.8);*/
   	background-color: #F44336; 
 	border-color: #F44336;

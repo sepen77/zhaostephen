@@ -44,7 +44,7 @@ app-header-btn{
 Background
 =========================================
 */
-.pages.bg-color{
+.pages .bg-color{
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -57,7 +57,7 @@ Background
 	background-color:#1B1B1B;
 }
 
-.pages.bg-img{
+.pages .bg-img{
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -82,7 +82,7 @@ Background
 Main Container
 =========================================
 */
-.pages.content{
+.pages .content{
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -100,12 +100,12 @@ Main Container
 Content
 =========================================
 */
-.pages.wip-text{
+.pages .wip-text{
 	position: relative;
 	font-size: 4rem;
 	font-family: 'Martel Sans', Arial, sans-serif;
 }
 
-.pages.potato{
+.pages .potato{
 	width:50rem;
 }

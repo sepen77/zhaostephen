@@ -16,7 +16,7 @@ app.factory("animService", function(){
 
 	service.resetAll = function(){
 		service.bClickedMenuCircle = false;
-		$('.home.menucircle').hide();
+		$('.home .menucircle').hide();
 		$('.transitionPanel').children().hide();
 		$('#bannerLogo').hide();
 	}
@@ -128,9 +128,9 @@ app.factory("animService", function(){
 			$('#bannerLogo').stop().fadeIn(withAddedComplete(service.ANOPT_DEF, function(){
 				$('#bannerLogo').css({'opacity':'100%'});
 			}));
-			$('.home.menucircle').stop().fadeIn(withAddedComplete(service.ANOPT_DEF, function(){
+			$('.home .menucircle').stop().fadeIn(withAddedComplete(service.ANOPT_DEF, function(){
 				
-				$('.home.menucircle').css({'opacity':'100%'});
+				$('.home .menucircle').css({'opacity':'100%'});
 			}));
 		//}, 300);
 	}
@@ -147,7 +147,7 @@ app.factory("animService", function(){
 			$('#bannerName').stop().fadeIn(withAddedComplete(service.ANOPT_DEF, function(){
 				$('#bannerName').css({'opacity':'100%'});
 			}));
-			$('.home.menucircle').stop().fadeOut(service.ANOPT_DEF);
+			$('.home .menucircle').stop().fadeOut(service.ANOPT_DEF);
 		//}, 300);
 	}
 
