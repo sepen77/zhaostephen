@@ -1,6 +1,7 @@
 var app = angular.module("zhaostephenApp", [
 		"ngRoute",
-		"appHeaderBtn"
+		"appHeaderBtn",
+		"appNav"
 	])
 	.config(function($routeProvider){
 		$routeProvider
@@ -109,7 +110,7 @@ var app = angular.module("zhaostephenApp", [
 			
 		});
 	})
-	.controller("appPageCtrl", function($scope, $routeParams, animService){
+	.controller("appPageCtrl", function($scope, $routeParams, $rootScope, animService){
 		this.pageName = $routeParams.pageName;
 		this.headerBtns = [
 		{
@@ -137,7 +138,12 @@ var app = angular.module("zhaostephenApp", [
 			url: "/#/pages/contact"
 		}]
 
+		this.exports = {
+			pageName: this.pageName
+		};
+
 		$(function() {
+			$rootScope.$broadcast('pageChange', []);
 			animService.resetAll($routeParams.pageName);
 		})
 	});

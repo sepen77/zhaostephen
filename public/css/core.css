@@ -48,3 +48,32 @@ Util Formatting
 	transform: translate(-50%,-50%);
 }
 
+@media screen and (min-width: 786px) {
+	.v-align-desk{
+		position:relative;
+		display: block;
+		top:50%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+
+	.c-align-desk{
+		position:relative;
+		display: block;
+		left:50%;
+		-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		transform: translateX(-50%);
+	}
+
+	.vc-align-desk{
+		position:relative;
+		display: block;
+		top:50%;
+		left:50%;
+		-webkit-transform: translate(-50%,-50%);
+		-ms-transform: translate(-50%,-50%);
+		transform: translate(-50%,-50%);
+	}
+}

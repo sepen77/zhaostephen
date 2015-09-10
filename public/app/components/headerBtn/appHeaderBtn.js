@@ -6,7 +6,7 @@ var appHeaderBtn = angular.module("appHeaderBtn", [])
 				data: "="
 			},
 			templateUrl: "/app/components/headerBtn/appHeaderBtn.html",
-			controller: "appHeaderBtnCtrl",
+			controller: 'appHeaderBtnCtrl',
 			controllerAs: "ctrl"
 		};
 	})

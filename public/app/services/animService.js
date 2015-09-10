@@ -24,19 +24,19 @@ app.factory("animService", function(){
 				break;
 
 			case 'profile':
-				$('.pages #nav-btn-profile').addClass('active');
+				$('#nav-btn-profile').addClass('active');
 				break;
 
 			case 'projects':
-				$('.pages #nav-btn-projects').addClass('active');
+				$('#nav-btn-projects').addClass('active');
 				break;
 
 			case 'photos':
-				$('.pages #nav-btn-photos').addClass('active');
+				$('#nav-btn-photos').addClass('active');
 				break;
 
 			case 'contact':
-				$('.pages #nav-btn-contact').addClass('active');
+				$('#nav-btn-contact').addClass('active');
 				break;
 		}
 	}
