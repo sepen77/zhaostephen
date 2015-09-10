@@ -11,9 +11,8 @@ var appNav = angular.module('appNav', [])
 		}
 	})
 	.controller('appNavCtrl', function($scope, $routeParams){
-		this.pageName = $scope.data.pageName;
-		this.prevWidth = $('html').width();
-		this.prevHeight = $('html').height();
+		var prevWidth = $('html').width();
+		var prevHeight = $('html').height();
 
 		var determineNav = function(){
 			var wndWidth = $('html').width();
@@ -25,7 +24,7 @@ var appNav = angular.module('appNav', [])
 				}
 				else{
 					this.prevWidth = wndWidth;
-					$('#topnav').load('/app/components/nav/appNavDef.html');
+					$('#topnav-target').load('/app/components/nav/appNavDef.html');
 					return;
 				}
 			}
@@ -36,7 +35,7 @@ var appNav = angular.module('appNav', [])
 				}
 				else{
 					this.prevWidth = wndWidth;
-					$('#topnav').load('/app/components/nav/appNavSmall.html');
+					$('#topnav-target').load('/app/components/nav/appNavSmall.html');
 					return;
 				}
 			}
@@ -47,11 +46,11 @@ var appNav = angular.module('appNav', [])
 			var wndHeight = $('html').height();
 			if(wndWidth >= 1000){
 				this.prevWidth = wndWidth;
-				$('#topnav').load('/app/components/nav/appNavDef.html');
+				$('#topnav-target').load('/app/components/nav/appNavDef.html');
 			}
 			else{
 				this.prevWidth = wndWidth;
-				$('#topnav').load('/app/components/nav/appNavSmall.html');
+				$('#topnav-target').load('/app/components/nav/appNavSmall.html');
 			}
 			switch(pageName){
 				case 'profile':
