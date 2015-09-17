@@ -15,7 +15,7 @@ var appContent = angular.module('appContent', [])
 		var determineContent = function(){
 			switch($routeParams.pageName){
 				case 'profile':
-					$('#content-target').load('/app/components/content/appContent-wip.html');
+					$('#content-target').load('/app/components/content/appContent-profile.html');
 					break;
 				case 'projects':
 					$('#content-target').load('/app/components/content/appContent-wip.html');
