@@ -142,7 +142,6 @@ var app = angular.module("zhaostephenApp", [
 		};
 
 		$(function() {
-			$rootScope.$broadcast('pageChange', []);
 			animService.resetAll($routeParams.pageName);
 		})
 	});

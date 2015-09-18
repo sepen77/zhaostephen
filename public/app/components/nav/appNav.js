@@ -79,9 +79,5 @@ var appNav = angular.module('appNav', [])
 			$(window).bind('resize',function() {
 				determineNav();
 			}).trigger('resize');
-
-			$scope.$on('pageChange', function(){
-				loadNav();
-			})
 		});
 	})
