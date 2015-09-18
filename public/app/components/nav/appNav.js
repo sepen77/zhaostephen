@@ -14,45 +14,8 @@ var appNav = angular.module('appNav', [])
 		var prevWidth = $('html').width();
 		var prevHeight = $('html').height();
 
-		var determineNav = function(){
-			var wndWidth = $('html').width();
-			var wndHeight = $('html').height();
-			if(wndWidth >= 1000){
-				if(this.prevWidth >= 1000){
-					this.prevWidth = wndWidth;
-					return;
-				}
-				else{
-					this.prevWidth = wndWidth;
-					$('#topnav-target').load('/app/components/nav/appNavDef.html');
-					return;
-				}
-			}
-			else{
-				if(this.prevWidth < 1000){
-					this.prevWidth = wndWidth;
-					return;
-				}
-				else{
-					this.prevWidth = wndWidth;
-					$('#topnav-target').load('/app/components/nav/appNavSmall.html');
-					return;
-				}
-			}
-		}
-
-		var loadNav = function(pageName){
-			var wndWidth = $('html').width();
-			var wndHeight = $('html').height();
-			if(wndWidth >= 1000){
-				this.prevWidth = wndWidth;
-				$('#topnav-target').load('/app/components/nav/appNavDef.html');
-			}
-			else{
-				this.prevWidth = wndWidth;
-				$('#topnav-target').load('/app/components/nav/appNavSmall.html');
-			}
-			switch(pageName){
+		var makeBtnActive = function(){
+			switch($routeParams.pageName){
 				case 'profile':
 					$('#nav-btn-profile').addClass('active');
 					break;
@@ -71,14 +34,54 @@ var appNav = angular.module('appNav', [])
 			}
 		}
 
+		var determineNav = function(){
+			var wndWidth = $('html').width();
+			var wndHeight = $('html').height();
+			if(wndWidth >= 1000){
+				if(this.prevWidth >= 1000){
+					this.prevWidth = wndWidth;
+					return;
+				}
+				else{
+					this.prevWidth = wndWidth;
+					$('#topnav-target').load('/app/components/nav/appNavDef.html', makeBtnActive);
+					return;
+				}
+			}
+			else{
+				if(this.prevWidth < 1000){
+					this.prevWidth = wndWidth;
+					return;
+				}
+				else{
+					this.prevWidth = wndWidth;
+					$('#topnav-target').load('/app/components/nav/appNavSmall.html', makeBtnActive);
+					return;
+				}
+			}
+		}
+
+		var loadNav = function(){
+			var wndWidth = $('html').width();
+			var wndHeight = $('html').height();
+			if(wndWidth >= 1000){
+				this.prevWidth = wndWidth;
+				$('#topnav-target').load('/app/components/nav/appNavDef.html', makeBtnActive);
+			}
+			else{
+				this.prevWidth = wndWidth;
+				$('#topnav-target').load('/app/components/nav/appNavSmall.html', makeBtnActive);
+			}
+		}
+
 		$(function(){
-			loadNav($routeParams.pageName);
+			loadNav();
 			$(window).bind('resize',function() {
 				determineNav();
 			}).trigger('resize');
 
 			$scope.$on('pageChange', function(){
-				loadNav($routeParams.pageName);
+				loadNav();
 			})
 		});
 	})
