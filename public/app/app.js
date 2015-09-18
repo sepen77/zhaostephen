@@ -2,7 +2,8 @@ var app = angular.module("zhaostephenApp", [
 		"ngRoute",
 		"appHeaderBtn",
 		"appNav",
-		"appContent"
+		"appContent",
+		"appFooter"
 	])
 	.config(function($routeProvider){
 		$routeProvider

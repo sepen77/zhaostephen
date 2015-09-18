@@ -149,12 +149,22 @@ app-header-btn{
 }
 
 .section-wrapper {
-	padding: 20px 0;
+	padding: 40px 0;
 }
 
 
 #profile-section-1 {
-	background-color: #2196F3;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url(../img/index-bg01.jpg);
+}
+
+#profile-section-1-wrapper {
+	padding-top:300px;
+}
+
+#profile-dp-img {
+	width: 250px;
 }
 
 .row img {
