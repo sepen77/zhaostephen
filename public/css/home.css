@@ -28,12 +28,12 @@ Background
 
 	background-position: center;
 	background-repeat: no-repeat;
-	background-image: url(../img/index-bg01.jpg);
-	-webkit-filter: blur(10px) brightness(1);
-	-moz-filter: blur(10px) brightness(1);
-    -o-filter: blur(10px) brightness(1);
-    -ms-filter: blur(10px) brightness(1);
-    filter: blur(10px) brightness(1);
+	background-image: url(../img/bg01.jpg);
+	-webkit-filter: blur(3px) brightness(1);
+	-moz-filter: blur(3px) brightness(1);
+    -o-filter: blur(3px) brightness(1);
+    -ms-filter: blur(3px) brightness(1);
+    filter: blur(3px) brightness(1);
 }
 
 /*

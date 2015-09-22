@@ -39,7 +39,7 @@ var doResize = function() {
 		var maxHeight = 1920;
 		wndHeight = Math.min(wndHeight, maxHeight);
 		var fw = wndHeight*(10/maxHeight);
-		var fpc = roundToNth(fw*100/8, 0.16);
+		var fpc = roundToNth(fw*100/16, 0.16);
 		fpc = Math.max(fpc,25)
 	}
 	$('html').css('font-size',fpc+'%');
