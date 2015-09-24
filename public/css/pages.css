@@ -115,7 +115,7 @@
 }
 
 .section-wrapper {
-	padding: 60px 0;
+	padding: 60px 30px;
 }
 
 
@@ -138,15 +138,30 @@
 	width: 250px;
 }
 
-#profile-section-1-reg {
-	font-size:60px;
-	color:#fff;
+@media screen and (min-width: 400px) {
+	#profile-section-1-reg {
+		font-size:60px;
+		color:#fff;
+	}
+
+	#profile-section-1-name {
+		font-size:128px;
+		line-height: 100px;
+		color:#fff;
+	}
 }
 
-#profile-section-1-name {
-	font-size:128px;
-	line-height: 100px;
-	color:#fff;
+@media screen and (max-width: 400px) {
+	#profile-section-1-reg {
+		font-size:40px;
+		color:#fff;
+	}
+
+	#profile-section-1-name {
+		font-size: 80px;
+		line-height: 60px;
+		color:#fff;
+	}
 }
 
 /* SECTION 2 */
