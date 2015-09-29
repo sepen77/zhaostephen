@@ -5,6 +5,11 @@ module.exports = function(app){
     	res.sendFile(path.resolve(__dirname + '/../public/index.html'));
 	});
 
+	app.get('/downloads/Resume', function(req, res){
+		console.log('sending resume...');
+		res.sendFile(path.resolve(__dirname + '/../res/StephenZhao_Resume.pdf'));
+	});
+
 	app.get('/api/profile', function(req, res) {
     	res.sendFile(path.resolve(__dirname + '/../public/index.html'));
 	});
@@ -16,5 +21,6 @@ module.exports = function(app){
 	app.get('/api/photos', function(req, res) {
     	res.sendFile(path.resolve(__dirname + '/../public/index.html'));
 	});
-	
+
+	return app;
 };

@@ -6,9 +6,8 @@ module.exports = function() {
 	var app = express();
 	
 	app.use(express.static('./public'));
-	app.use(express.static('./pages'));
-	
-	routes(app);
+
+	app = routes(app);
 
 	return app;
 };

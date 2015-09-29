@@ -130,15 +130,23 @@
 	background-image: url(../img/bg02.jpg);
 }
 
-#profile-section-1-wrapper {
-	padding-top:400px;
+@media (min-width: 550px) {
+	#profile-section-1-wrapper {
+		padding-top:400px;
+	}
+}
+
+@media (max-width: 550px) {
+	#profile-section-1-wrapper {
+		padding-top:300px;
+	}
 }
 
 #profile-dp-img {
 	width: 250px;
 }
 
-@media screen and (min-width: 400px) {
+@media (min-width: 550px) {
 	#profile-section-1-reg {
 		font-size:60px;
 		color:#fff;
@@ -151,7 +159,7 @@
 	}
 }
 
-@media screen and (max-width: 400px) {
+@media (max-width: 550px) {
 	#profile-section-1-reg {
 		font-size:40px;
 		color:#fff;
