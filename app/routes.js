@@ -7,7 +7,7 @@ module.exports = function(app){
 
 	app.get('/downloads/Resume', function(req, res){
 		console.log('sending resume...');
-		res.sendFile(path.resolve(__dirname + '/../res/StephenZhao_Resume.pdf'));
+		res.sendFile(path.resolve(__dirname + '/../res/StephenZhao_RE_v201601090059_new-me.pdf'));
 	});
 
 	app.get('/api/profile', function(req, res) {
