@@ -18,16 +18,16 @@ var appContent = angular.module('appContent', [])
 					$('#content-target').load('/app/components/content/appContent-profile.html');
 					break;
 				case 'projects':
-					$('#content-target').load('/app/components/content/appContent-wip.html');
+					$('#content-target').load('/app/components/content/appContent-projects.html');
 					break;
 				case 'photos':
-					$('#content-target').load('/app/components/content/appContent-wip.html');
+					$('#content-target').load('/app/components/content/appContent-photos.html');
 					break;
 				case 'contact':
-					$('#content-target').load('/app/components/content/appContent-wip.html');
+					$('#content-target').load('/app/components/content/appContent-contact.html');
 					break;
 				default:
-					$('#content-target').add('No such page');
+					$('#content-target').load('/app/components/content/appContent-default.html');
 			}
 		}
 

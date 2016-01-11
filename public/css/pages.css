@@ -62,6 +62,7 @@
 	box-shadow: 0 0 8px 4px rgba(255, 255, 255, 1);
 }
 
+
 /*
 ===============================================================================
 ======================            BACKGROUND             ======================
@@ -100,9 +101,10 @@
     filter: blur(10px) brightness(1);
 }
 
+
 /*
 ===============================================================================
-=====================            PAGE:  PROFILE           =====================
+======================          SECTION GENERAL          ======================
 ===============================================================================
 */
 
@@ -115,8 +117,15 @@
 }
 
 .section-wrapper {
-	padding: 60px 30px;
+	padding: 80px 30px;
 }
+
+
+/*
+===============================================================================
+=====================            PAGE:  PROFILE           =====================
+===============================================================================
+*/
 
 
 /* SECTION 1 */
@@ -191,6 +200,10 @@
 }
 
 /* SECTION 4 */
+#profile-section-4 {
+	color:#000;
+}
+
 #profile-section-4-bg {
 	background-position: center;
 	background-repeat: no-repeat;
@@ -212,5 +225,111 @@
 ===============================================================================
 */
 .pages .wip-text{
-	position: relative;
+}
+
+
+/*
+===============================================================================
+=======================          PAGE:  PHOTOS          =======================
+===============================================================================
+*/
+
+#photos-toppadding{
+
+}
+
+
+/* SECTION 1 */
+#photos-section-1 {
+	position:absolute;
+	display: block;
+	top:50%;
+	left:10%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+#photos-section-1-row1{
+
+}
+
+/*
+===============================================================================
+=======================         PAGE:  PROJECTS         =======================
+===============================================================================
+*/
+
+#projects-toppadding{
+
+}
+
+
+/* SECTION 1 */
+#projects-section-1 {
+	position:absolute;
+	display: block;
+	top:50%;
+	left:10%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+#projects-section-1-row1{
+
+}
+
+
+/*
+===============================================================================
+=======================          PAGE: CONTACT          =======================
+===============================================================================
+*/
+
+#contact-toppadding{
+
+}
+
+
+/* SECTION 1 */
+#contact-section-1 {
+	position:absolute;
+	display: block;
+	top:50%;
+	left:10%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+#contact-section-1-row1{
+
+}
+
+
+/*
+===============================================================================
+=======================          PAGE: DEFAULT          =======================
+===============================================================================
+*/
+
+#default-toppadding{
+
+}
+
+
+/* SECTION 1 */
+#default-section-1 {
+	position:absolute;
+	display: block;
+	top:50%;
+	left:10%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+#default-section-1-row1{
+
 }
