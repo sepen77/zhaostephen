@@ -5,9 +5,9 @@ module.exports = function(app){
     	res.sendFile(path.resolve(__dirname + '/../public/index.html'));
 	});
 
-	app.get('/downloads/Resume', function(req, res){
+	app.get('/downloads/Resume/', function(req, res){
 		console.log('sending resume...');
-		res.sendFile(path.resolve(__dirname + '/../res/StephenZhao_RE_v201601090059_new-me.pdf'));
+		res.sendFile(path.resolve(__dirname + '/../res/StephenZhao_RE_v201601141715.pdf'));
 	});
 
 	app.get('/api/profile', function(req, res) {
