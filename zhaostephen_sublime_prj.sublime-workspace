@@ -67,7 +67,7 @@
 			"file": "app/routes.js",
 			"settings":
 			{
-				"buffer_size": 733,
+				"buffer_size": 737,
 				"line_ending": "Windows"
 			}
 		},
@@ -713,15 +713,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 733,
+						"buffer_size": 737,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								320,
-								320
+								344,
+								344
 							]
 						],
 						"settings":
@@ -734,7 +734,7 @@
 								"current_ext": ".js",
 								"current_syntax": "JavaScript/JavaScript",
 								"enabled": false,
-								"last_updated": 1452839153.81
+								"last_updated": 1452843020.16
 							},
 							"color_scheme": "Packages/Materialize/schemes/Material Stereokai.tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
